@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import PomoDoroTimer from "./Timer/Pomodoro";
 
-const inter = Inter({ subsets: ["latin"] });
+const MainFont = Roboto({
+  subsets: ["latin"],
+  weight: "500"
+});
 
 export const metadata: Metadata = {
   title: "Focus-App",
@@ -15,8 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={MainFont.className} >
+      <body className="grid grid-cols-9 gap-1 relative bg-main dark:bg-slate-800 text-text-color">
+        <main className="col-start-2 col-end-7">{children}</main>
+        <aside className="col-start-7 col-end-10 fixed m-4">
+          <PomoDoroTimer />
+        </aside>
+      </body>
     </html>
   );
 }
