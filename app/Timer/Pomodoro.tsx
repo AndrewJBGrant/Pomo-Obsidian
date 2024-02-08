@@ -1,16 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useRef } from "react";
 
 const PomoDoroTimer: React.FC = () => {
   const [time, setTime] = useState(1500);
   const [timeLeft, setTimeLeft] = useState(time);
   const [running, setIsRunning] = useState(false);
 
-const colors = ['bg-red-500', 'bg-green-500', 'bg-yellow-500'];
-const [color, setColor] = useState(colors[0]);
+  const colors = ["bg-red-500", "bg-green-500", "bg-yellow-500"];
+  const [color, setColor] = useState(colors[0]);
 
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const playAudio = () => {
+    if (audioRef.current != null) {
+      //  TypeScript knows that ref is not null here
+      audioRef.current.play();
+    }
+  };
 
   const handleTimeOption = (time: number) => {
     setTime(time);
@@ -26,7 +33,6 @@ const [color, setColor] = useState(colors[0]);
       return () => clearInterval(timer);
     }
   }, [running]);
-
 
   return (
     <>
@@ -44,47 +50,48 @@ const [color, setColor] = useState(colors[0]);
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center transition-colors duration-150 bg focus:shadow-outline ${color}`}
+          className={`px-8 text-3xl flex justify-center focus:shadow-outline ${color}`}
           onClick={() => {
             setIsRunning(!running);
-
+            playAudio;
           }}
         >
+          <audio ref={audioRef} src="../sounds/Timer_end.mp3" />
           {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className="text-xl grid grid-cols-3 divide-x">
+      <div className={`text-xl grid grid-cols-3 divide-x ${color}`}>
         <button
-          className="bg-lime-700"
           onClick={() => {
             {
               handleTimeOption(1500);
+              setColor(colors[0]);
             }
           }}
         >
           Focus
         </button>
         <button
-          className="bg-lime-700"
           onClick={() => {
             handleTimeOption(300);
-          
+            setColor(colors[1]);
           }}
         >
           Short Break
         </button>
 
         <button
-          className="bg-lime-700"
           onClick={() => {
             handleTimeOption(900);
-            setColor(colors[1])
+            setColor(colors[2]);
           }}
         >
           {" "}
           Long Break
         </button>
       </div>
+
+      <audio src=""></audio>
     </>
   );
 };
