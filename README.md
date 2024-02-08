@@ -1,5 +1,5 @@
 # Focus App
-I wanted to peplicate my current setup of using a pomodoro timer, to-do list and Obsidian.
+I wanted to Replicate my current setup of using a pomodoro timer, to-do list and Obsidian.
 
 A very practical way to learn the best practices of # TypeScript, # Tailwind CSS, # React and testing libraries like # Jest and # React testing library
 Using # Next.js allows me to work front and back end in # TypeScript aswell as working with # RSC (React server components)
