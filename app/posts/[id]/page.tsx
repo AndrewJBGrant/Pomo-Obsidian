@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
 import Link from "next/link";
-import data from "../../data.json";
+import data from "../../data";
 import { useRouter } from "next/navigation";
 
 // type PostEntry = {
@@ -35,12 +35,11 @@ import { useRouter } from "next/navigation";
 
 // export default PostPage;
 
-
 export default function Page({ params }: { params: { title: string } }) {
-  return(
-  <>
-  <div>My Post:</div>
-        <Link href="/">Go Back</Link>
-  </>
-  )
-};
+  return (
+    <>
+      <div>My Post:</div>
+      <Link href="/">Go Back</Link>
+    </>
+  );
+}

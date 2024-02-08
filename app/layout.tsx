@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={MainFont.className} >
+    <html lang="en" className={`${MainFont.className} antialiased `} >
       <body className="grid grid-cols-9 gap-1 relative bg-main dark:bg-slate-800 text-text-color">
         <main className="col-start-2 col-end-7">{children}</main>
         <aside className="col-start-7 col-end-10 fixed m-4">
