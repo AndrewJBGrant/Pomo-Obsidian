@@ -5,6 +5,7 @@ A very practical way to learn the best practices of # TypeScript, ##Tailwind CSS
 Using # Next.js allows me to work front and back end in # TypeScript aswell as working with # RSC (React server components)
 I wanted to minimise the amount of npm packages used and instead work on coding as much as possible myself to get a deep understanding of how JavaScript is working under the hood.
 
+**This is bold text**
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
