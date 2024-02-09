@@ -51,7 +51,7 @@ const PomoDoroTimer: React.FC = () => {
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center ${color} hover:`}
+          className={`px-8 text-3xl flex justify-center ${color} focus: bg-[#1da1f2]`}
           onClick={() => {
             setIsRunning(!running);
             playAudio;

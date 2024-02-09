@@ -42,59 +42,59 @@ export const todos = [
 {
 "id": 1,
 "user_id": 3,
-"content":"Promises provide a way to handle asynchronous operations",
+"content":"https://pomofocus.io/",
 "date_created": "28-01-2024"
 },
 {
 "id": 2,
 "user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
+"content":"Learn more about data caching",
 "date_created": "28-01-2024"
 },
 {
 "id": 3,
 "user_id": 3,
-"content":"Promises provide a way to handle asynchronous operations",
+"content":"You can use generateMetadata function to fetch metadata that requires dynamic values.",
 "date_created": "28-01-2024"
 },
 {
 "id": 4,
 "user_id": 2,
-"content":"Promises provide a way to handle asynchronous operations",
+"content":"Upload to vercel",
 "date_created": "28-01-2024"
 },
 {
 "id": 5,
+"user_id": 3,
+"content":"fixed position on the pomodoro and todo list",
+"date_created": "28-01-2024"
+},
+{
+"id": 6,
 "user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
+"content":"Types file is it really needed?",
 "date_created": "28-01-2024"
 },
 {
-"id": 5,
-"user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
+"id": 7,
+"user_id": 2,
+"content":"Decide on Prisma ORM or striaght SQL",
 "date_created": "28-01-2024"
 },
 {
-"id": 5,
-"user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
+"id": 8,
+"user_id": 2,
+"content":"Work on grid layouts and mobile design",
 "date_created": "28-01-2024"
 },
 {
-"id": 5,
-"user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
-"date_created": "28-01-2024"
+"id": 9,
+"user_id": 3,
+"content":"Work on dark mode and establish base colors/styles",
+"date_created": "23-01-2024"
 },
 {
-"id": 5,
-"user_id": 1,
-"content":"Promises provide a way to handle asynchronous operations",
-"date_created": "28-01-2024"
-},
-{
-"id": 5,
+"id": 10,
 "user_id": 1,
 "content":"Promises provide a way to handle asynchronous operations",
 "date_created": "28-01-2024"
