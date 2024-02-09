@@ -1,42 +1,35 @@
-"use client";
+// import { GetServerSideProps } from 'next';
+// import { posts } from '../../data'; // Import your data
 
-import Link from "next/link";
-import { posts } from "../../data";
-import { useRouter } from "next/router";
-
-// type PostEntry = {
+// interface Post {
+//   id: number;
 //   title: string;
 //   content: string;
+// }
+
+// const PostPage = ({ post }: { post: Post }) => {
+//   if (!post) {
+//     return <div>Post not found</div>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>{post.title}</h1>
+//       <p>{post.content}</p>
+//     </div>
+//   );
 // };
 
-const PostPage: React.FC = () => {
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const id  = context.params?.id as string | undefined;
+//   const postId = parseInt(id as string, 10);
+//   const post = posts.find((p) => p.id === postId);
 
-// const router = useRouter();
-// const id = router.query;
+//   return {
+//     props: {
+//       post,
+//     },
+//   };
+// };
 
-// const post = posts.find(post => post.id === Number(id))
-
-return (
-<>
-<h1>Post: </h1>
-
-
-
-</>
-
-
-)
-
-
-
-}
-
-
-
-// const getPostById = (id: number) => {
-//   return posts.find((post: { id: any; }) => post.id === id);
-// }
-// const myPost = getPostById();
-
-
-export default PostPage;
+// export default PostPage;
