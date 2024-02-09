@@ -7,7 +7,8 @@ const PomoDoroTimer: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(time);
   const [running, setIsRunning] = useState(false);
 
-  const colors = ["bg-red-500", "bg-green-500", "bg-yellow-500"];
+
+  const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"];
   const [color, setColor] = useState(colors[0]);
 
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -36,7 +37,7 @@ const PomoDoroTimer: React.FC = () => {
 
   return (
     <>
-      <div className={`flex flex-col justify-center p-6 rounded ${color}`}>
+      <div className={`flex flex-col justify-center p-6 ${color}`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
             0{Math.floor(timeLeft / 60)}:
@@ -50,7 +51,7 @@ const PomoDoroTimer: React.FC = () => {
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center focus:shadow-outline ${color}`}
+          className={`px-8 text-3xl flex justify-center ${color} hover:`}
           onClick={() => {
             setIsRunning(!running);
             playAudio;
@@ -60,8 +61,8 @@ const PomoDoroTimer: React.FC = () => {
           {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className={`text-xl grid grid-cols-3 divide-x ${color}`}>
-        <button
+      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${color}`}>
+        <button className="focus:bg"
           onClick={() => {
             {
               handleTimeOption(1500);
@@ -71,7 +72,7 @@ const PomoDoroTimer: React.FC = () => {
         >
           Focus
         </button>
-        <button
+        <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(300);
             setColor(colors[1]);

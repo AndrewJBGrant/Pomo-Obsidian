@@ -1,6 +1,6 @@
 
 
-const posts = [
+ export const posts = [
 {
     "id": 1,
     "user_id": 1,
@@ -38,7 +38,7 @@ const posts = [
   }
 ]
 
-const todos = [
+export const todos = [
 {
 "id": 1,
 "user_id": 3,
@@ -69,12 +69,34 @@ const todos = [
 "content":"Promises provide a way to handle asynchronous operations",
 "date_created": "28-01-2024"
 },
+{
+"id": 5,
+"user_id": 1,
+"content":"Promises provide a way to handle asynchronous operations",
+"date_created": "28-01-2024"
+},
+{
+"id": 5,
+"user_id": 1,
+"content":"Promises provide a way to handle asynchronous operations",
+"date_created": "28-01-2024"
+},
+{
+"id": 5,
+"user_id": 1,
+"content":"Promises provide a way to handle asynchronous operations",
+"date_created": "28-01-2024"
+},
+{
+"id": 5,
+"user_id": 1,
+"content":"Promises provide a way to handle asynchronous operations",
+"date_created": "28-01-2024"
+},
+{
+"id": 5,
+"user_id": 1,
+"content":"Promises provide a way to handle asynchronous operations",
+"date_created": "28-01-2024"
+},
 ]
-
-
-
-
-module.exports = {
-  posts,
-  todos
-};

@@ -1,45 +1,42 @@
 "use client";
 
 import Link from "next/link";
-import data from "../../data";
-import { useRouter } from "next/navigation";
+import { posts } from "../../data";
+import { useRouter } from "next/router";
 
 // type PostEntry = {
 //   title: string;
 //   content: string;
 // };
 
-// const PostPage: React.FC = () => {
-//     const router = useRouter();
-//     const { id }: {id: number } = router.query;
+const PostPage: React.FC = () => {
 
-//     // Find the journal entry by ID
-//     const entry: PostEntry | undefined = data.posts.find((entry) => entry.id === id);
+// const router = useRouter();
+// const id = router.query;
 
-//     if (!entry) {
-//         return <div>Journal entry not found.</div>;
-//     }
+// const post = posts.find(post => post.id === Number(id))
 
-//     return (
-//         <>
+return (
+<>
+<h1>Post: </h1>
 
-//  <h1>Hello There</h1>
-//   <h2 className='font-bold text-3xl'>{entry.title}</h2>
-//         <div className='mt-6'>
-//           {entry?.content}
-//         </div>
 
-//         </>
-//     );
-// };
 
-// export default PostPage;
+</>
 
-export default function Page({ params }: { params: { title: string } }) {
-  return (
-    <>
-      <div>My Post:</div>
-      <Link href="/">Go Back</Link>
-    </>
-  );
+
+)
+
+
+
 }
+
+
+
+// const getPostById = (id: number) => {
+//   return posts.find((post: { id: any; }) => post.id === id);
+// }
+// const myPost = getPostById();
+
+
+export default PostPage;
