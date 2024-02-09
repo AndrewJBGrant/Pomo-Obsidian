@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${MainFont.className} antialiased`} suppressHydrationWarning>
-      <body className="grid grid-cols-9 gap-1 relative bg-main dark:bg-slate-800 m-4">
+      <body className="grid grid-cols-9 gap-1 relative bg-main dark:bg-zinc-700">
         <Providers>
           <NavBar />
           <main className="col-start-1 col-end-7">{children}</main>
