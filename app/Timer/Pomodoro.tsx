@@ -1,6 +1,6 @@
 "use client";
-import useTheme,{ themeColors,ThemeProvider } from "../ColorContext"
-import { useState, useEffect, useContext, createContext, useRef } from "react";
+
+import { useState, useEffect, useRef } from "react";
 
 
 
@@ -12,18 +12,11 @@ function PomoDoroTimer() {
 
   const audioRef = useRef<HTMLAudioElement>(null);
 
-const { color, setColor} = useTheme();
+ const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"]
 
-  // const playAudio = () => {
-  //   if (audioRef.current != null) {
-  //     //  TypeScript knows that ref is not null here
-  //     audioRef.current.play();
-  //   }
-  // };
+ const [color, setColor] = useState(colors[0])
 
 
-
-  //  let colorContextValue = useContext(ClrContext)
 
   const handleTimeOption = (time: number) => {
     setTime(time);
@@ -45,7 +38,7 @@ const { color, setColor} = useTheme();
 
   return (
     <>
-<ThemeProvider>
+
 
 
       <div className={`flex flex-col justify-center p-6 ${color}`}>
@@ -77,7 +70,7 @@ const { color, setColor} = useTheme();
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor;
+              setColor(colors[0]);
             }
           }}
         >
@@ -86,7 +79,7 @@ const { color, setColor} = useTheme();
         <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(300);
-            setColor;
+            setColor(colors[1]);
           }}
         >
           Short Break
@@ -95,14 +88,13 @@ const { color, setColor} = useTheme();
         <button
           onClick={() => {
             handleTimeOption(900);
-            setColor;
+            setColor(colors[2]);
           }}
         >
           {" "}
           Long Break
         </button>
       </div>
-</ThemeProvider>
     </>
   );
 };
