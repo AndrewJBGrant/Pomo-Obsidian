@@ -9,7 +9,6 @@ import Link from "next/link";
 export default function AllPosts() {
 
 
-
   return (
     <section className="flex min-h-screen flex-col items-center justify-between">
 
@@ -18,7 +17,7 @@ export default function AllPosts() {
       {posts.map((post) => (
         <article
           key={post.id}
-          className="hover:bg-neutral-500 m-2 text-pretty text-balance"
+          className="hover:bg-neutral-500 m-2 text-balance"
         >
           <Link href={`/posts/${post.id}`} key={post.id}>
 

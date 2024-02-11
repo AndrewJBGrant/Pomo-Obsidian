@@ -1,29 +1,35 @@
 "use client";
+import useTheme,{ themeColors,ThemeProvider } from "../ColorContext"
+import { useState, useEffect, useContext, createContext, useRef } from "react";
 
-import { useState, useEffect, useRef } from "react";
 
-const PomoDoroTimer: React.FC = () => {
+
+
+function PomoDoroTimer() {
   const [time, setTime] = useState(1500);
   const [timeLeft, setTimeLeft] = useState(time);
   const [running, setIsRunning] = useState(false);
 
-
-  const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"];
-  const [color, setColor] = useState(colors[0]);
-
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const playAudio = () => {
-    if (audioRef.current != null) {
-      //  TypeScript knows that ref is not null here
-      audioRef.current.play();
-    }
-  };
+const { color, setColor} = useTheme();
+
+  // const playAudio = () => {
+  //   if (audioRef.current != null) {
+  //     //  TypeScript knows that ref is not null here
+  //     audioRef.current.play();
+  //   }
+  // };
+
+
+
+  //  let colorContextValue = useContext(ClrContext)
 
   const handleTimeOption = (time: number) => {
     setTime(time);
     setTimeLeft(time);
   };
+
 
   useEffect(() => {
     if (running) {
@@ -35,8 +41,13 @@ const PomoDoroTimer: React.FC = () => {
     }
   }, [running]);
 
+
+
   return (
     <>
+<ThemeProvider>
+
+
       <div className={`flex flex-col justify-center p-6 ${color}`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
@@ -51,10 +62,10 @@ const PomoDoroTimer: React.FC = () => {
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center ${color} focus: bg-[#1da1f2]`}
+          className={`px-8 text-3xl flex justify-center ${color}`}
           onClick={() => {
             setIsRunning(!running);
-            playAudio;
+            // playAudio;
           }}
         >
           <audio ref={audioRef} src="../sounds/Timer_end.mp3" />
@@ -62,11 +73,11 @@ const PomoDoroTimer: React.FC = () => {
         </button>
       </div>
       <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${color}`}>
-        <button className="focus:bg"
+        <button className=""
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor(colors[0]);
+              setColor;
             }
           }}
         >
@@ -75,7 +86,7 @@ const PomoDoroTimer: React.FC = () => {
         <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(300);
-            setColor(colors[1]);
+            setColor;
           }}
         >
           Short Break
@@ -84,15 +95,14 @@ const PomoDoroTimer: React.FC = () => {
         <button
           onClick={() => {
             handleTimeOption(900);
-            setColor(colors[2]);
+            setColor;
           }}
         >
           {" "}
           Long Break
         </button>
       </div>
-
-      <audio src=""></audio>
+</ThemeProvider>
     </>
   );
 };
