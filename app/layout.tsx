@@ -23,11 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${MainFont.className} antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${MainFont.className} antialiased`}
+      suppressHydrationWarning
+    >
       <body className="grid grid-cols-9 gap-1 relative dark:bg-zinc-700">
         <Providers>
-          <SearchBar type={"/"}/>
           <NavBar />
+
+          <span className="justify-self-center">
+            <SearchBar type={"/"} />
+          </span>
           <main className="col-start-1 col-end-7">{children}</main>
           <RightSide />
         </Providers>

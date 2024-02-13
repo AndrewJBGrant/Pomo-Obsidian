@@ -1,13 +1,9 @@
 "use client";
 
-
 import { posts } from "../data";
 import Link from "next/link";
 
-
-
 export default function AllPosts() {
-
 
   return (
     <section className="flex min-h-screen flex-col items-center justify-between">
