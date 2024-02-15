@@ -3,6 +3,9 @@ import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 import { useEffect, useState } from "react";
 
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { MdOutlineClear } from "react-icons/md";
+
 // https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#userouter-hook
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
 
@@ -78,7 +81,7 @@ useEffect(() => {
     // const occurrences = findOccurrences(placeHolderText, searchQuery);
 
 function clearField() {
-setSearchQuery(placeHolderText)
+setSearchQuery("")
 };
 
 
@@ -91,15 +94,17 @@ setSearchQuery(placeHolderText)
       placeholder={placeHolderText}
 
     />
-            <svg className="w-6 h-6 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="current" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        {/* <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> */}
-    {/* <h2 className="border border-red-600">{highlightText(placeHolderText, occurrences)}</h2> */}
 
-<button className="bg-green-600 font-extrabold" onClick={clearField}>Clear!!</button>
+{searchQuery.length === 0 ? <button className=""><FaMagnifyingGlass/></button> :
+<button className="text-2xl" onClick={clearField}><MdOutlineClear/></button>
+}
+
     </div>
   );
 };
 
 export default SearchBar;
+
+
+        {/* <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> */}
+    {/* <h2 className="border border-red-600">{highlightText(placeHolderText, occurrences)}</h2> */}
