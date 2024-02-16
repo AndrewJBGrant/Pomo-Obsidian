@@ -1,11 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 
-
+import { Context } from "../context/contextObject";
 
 
 function PomoDoroTimer() {
+
+ const contextValue = useContext(Context);
+
+
   const [time, setTime] = useState(1500);
   const [timeLeft, setTimeLeft] = useState(time);
   const [running, setIsRunning] = useState(false);
@@ -15,8 +19,6 @@ function PomoDoroTimer() {
  const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"]
 
  const [color, setColor] = useState(colors[0])
-
-
 
   const handleTimeOption = (time: number) => {
     setTime(time);
@@ -40,7 +42,7 @@ function PomoDoroTimer() {
 
       return () => clearInterval(timer);
     }
-  }, [running]);
+  }, [running, time]);
 
 
 
@@ -49,7 +51,7 @@ function PomoDoroTimer() {
 
 
 
-      <div className={`flex flex-col justify-center p-6 ${color}`}>
+      <div className={`flex flex-col justify-center p-6 ${contextValue}`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
             0{Math.floor(timeLeft / 60)}:
@@ -63,7 +65,7 @@ function PomoDoroTimer() {
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center ${color}`}
+          className={`px-8 text-3xl flex justify-center ${contextValue}`}
           onClick={() => {
             setIsRunning(!running);
             // playAudio;
@@ -73,7 +75,7 @@ function PomoDoroTimer() {
           {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${color}`}>
+      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${contextValue}`}>
         <button className=""
           onClick={() => {
             {
