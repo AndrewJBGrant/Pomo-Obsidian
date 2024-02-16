@@ -23,6 +23,14 @@ function PomoDoroTimer() {
     setTimeLeft(time);
   };
 
+  useEffect(() => {
+    if (timeLeft === 0) {
+      clearInterval(time);
+      alert('Timer reached zero!');
+    }
+  }, [timeLeft, time]);
+
+
 
   useEffect(() => {
     if (running) {
@@ -78,7 +86,7 @@ function PomoDoroTimer() {
         </button>
         <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
-            handleTimeOption(300);
+            handleTimeOption(100);
             setColor(colors[1]);
           }}
         >

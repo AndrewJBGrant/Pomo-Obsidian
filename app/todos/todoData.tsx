@@ -5,7 +5,7 @@ import Todo from "../todos/Todo";
 
 export default function AllTodos() {
   return (
-    <section className="flex flex-col items-center justify-between scroll-overflow">
+    <section className="items-center justify-between overflow-y-auto">
       {todos.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}
