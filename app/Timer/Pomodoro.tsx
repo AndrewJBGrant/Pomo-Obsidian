@@ -5,6 +5,8 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { Context } from "../context/contextObject";
 
 
+
+
 function PomoDoroTimer() {
 
  const contextValue = useContext(Context);
@@ -18,7 +20,7 @@ function PomoDoroTimer() {
 
  const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"]
 
- const [color, setColor] = useState(colors[0])
+ const [color, setColor] = useState(contextValue)
 
   const handleTimeOption = (time: number) => {
     setTime(time);
@@ -31,6 +33,7 @@ function PomoDoroTimer() {
       alert('Timer reached zero!');
     }
   }, [timeLeft, time]);
+
 
 
 
@@ -80,7 +83,7 @@ function PomoDoroTimer() {
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor(colors[0]);
+              setColor(contextValue);
             }
           }}
         >

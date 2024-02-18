@@ -6,8 +6,18 @@ import PomoDoroTimer from "../Timer/Pomodoro";
 const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"];
 export const Context = createContext(colors[0]);
 
+
+
+// console.log(typeof(Context))
+
 function App() {
   const [color, setColor] = useState("");
+
+// const { color, setColors } = useContext(Context)
+
+
+
+
 
   return (
     <>

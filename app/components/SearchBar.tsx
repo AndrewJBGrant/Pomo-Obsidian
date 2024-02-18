@@ -27,7 +27,7 @@ const router = useRouter();
 
 const handleInputChange = (e: any) => {
   setSearchQuery(e.target.value)
-  console.log(e.target.value, "target.value")
+  // console.log(e.target.value, "target.value")
 }
 
 useEffect(() => {
@@ -86,20 +86,28 @@ setSearchQuery("")
 
 
   return (
-    <div className="p-3 flex w-1/2 rounded-md fixed text-gray-900 border border-slate-700 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
+
+<div>
+
+
+    <div className="text-1xl w-1/2 flex rounded-md fixed text-gray-900 dark:placeholder-gray-400 dark:text-white dark:bg-slate-900">
     <input
     value={searchQuery}
     onChange={handleInputChange}
-      className="w-full place-self-center"
+      className="w-full p-3 place-self-center focus:outline-none"
       placeholder={placeHolderText}
 
     />
 
-{searchQuery.length === 0 ? <button className=""><FaMagnifyingGlass/></button> :
-<button className="text-2xl" onClick={clearField}><MdOutlineClear/></button>
+<span className="place-self-center m-2">
+{searchQuery.length === 0 ? <button className="text-2xl"><FaMagnifyingGlass/></button> :
+<button className="text-3xl" onClick={clearField}><MdOutlineClear/></button>
 }
+</span>
+
 
     </div>
+</div>
   );
 };
 
