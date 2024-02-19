@@ -87,10 +87,15 @@ setSearchQuery("")
 
   return (
 
-<div>
+<search>
 
 
     <div className="text-1xl w-1/2 flex rounded-md fixed text-gray-900 dark:placeholder-gray-400 dark:text-white dark:bg-slate-900">
+<span className="place-self-center m-2">
+{searchQuery.length === 0 ? <button className="text-2xl"><FaMagnifyingGlass/></button> :
+<button className="text-3xl" onClick={clearField}><MdOutlineClear/></button>
+}
+</span>
     <input
     value={searchQuery}
     onChange={handleInputChange}
@@ -99,15 +104,10 @@ setSearchQuery("")
 
     />
 
-<span className="place-self-center m-2">
-{searchQuery.length === 0 ? <button className="text-2xl"><FaMagnifyingGlass/></button> :
-<button className="text-3xl" onClick={clearField}><MdOutlineClear/></button>
-}
-</span>
 
 
     </div>
-</div>
+</search>
   );
 };
 

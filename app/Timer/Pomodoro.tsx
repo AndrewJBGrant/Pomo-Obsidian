@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef, useContext } from "react";
 
-import { Context } from "../context/contextObject";
+//import { Context } from "../context/contextObject";
 
-
+import { useColorContext } from "../context/contextObject";
 
 
 function PomoDoroTimer() {
 
- const contextValue = useContext(Context);
+//  const contextValue = useContext(Context);
 
 
   const [time, setTime] = useState(1500);
@@ -18,9 +18,11 @@ function PomoDoroTimer() {
 
   const audioRef = useRef<HTMLAudioElement>(null);
 
- const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"]
+ // const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"]
 
- const [color, setColor] = useState(contextValue)
+//  const [color, setColor] = useState(contextValue)
+const { color, setColor } = useColorContext()
+
 
   const handleTimeOption = (time: number) => {
     setTime(time);
@@ -54,7 +56,7 @@ function PomoDoroTimer() {
 
 
 
-      <div className={`flex flex-col justify-center p-6 ${contextValue}`}>
+      <div className={`flex flex-col justify-center p-6 ${color}`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
             0{Math.floor(timeLeft / 60)}:
@@ -68,7 +70,7 @@ function PomoDoroTimer() {
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center ${contextValue}`}
+          className={`px-8 text-3xl flex justify-center ${color}`}
           onClick={() => {
             setIsRunning(!running);
             // playAudio;
@@ -78,12 +80,12 @@ function PomoDoroTimer() {
           {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${contextValue}`}>
+      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${color}`}>
         <button className=""
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor(contextValue);
+              setColor(color);
             }
           }}
         >
@@ -92,7 +94,7 @@ function PomoDoroTimer() {
         <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(100);
-            setColor(colors[1]);
+            setColor("");
           }}
         >
           Short Break
@@ -101,7 +103,7 @@ function PomoDoroTimer() {
         <button
           onClick={() => {
             handleTimeOption(900);
-            setColor(colors[2]);
+            setColor("");
           }}
         >
           {" "}
