@@ -9,6 +9,10 @@ h3 {
   @apply text-2xl;
 }
 
+a {
+  @apply  text-red-500 hover:bg-red-600;
+}
+
 @tailwind components;
 @tailwind utilities;
 

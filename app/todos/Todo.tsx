@@ -1,6 +1,7 @@
 "use client";
 
-import { todos } from "../data";
+import renderLinks from "../HighlightLinks";
+
 
 export type TodoProps = {
   id: number;
@@ -13,7 +14,7 @@ export type TodoProps = {
     <article className="grid w-full">
       <ul className="divide-y border border-neutral-700">
         <li className="flex items-center justify-between w-full text-lg group/item hover:bg-slate-400">
-          <span className="p-2">{todo.content}</span>
+          <span className="p-2" dangerouslySetInnerHTML={{__html: renderLinks(todo.content)}}></span>
         </li>
       </ul>
     </article>

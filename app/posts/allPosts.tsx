@@ -2,11 +2,18 @@
 
 import { posts } from "../data";
 import Link from "next/link";
+import renderLinks from "../HighlightLinks";
 
 export default function AllPosts() {
 
   return (
     <section className="flex min-h-screen flex-col items-center justify-between">
+
+
+
+
+
+
 
 
 <h1 className="">Recent Posts</h1>
@@ -15,7 +22,7 @@ export default function AllPosts() {
           key={post.id}
           className="hover:bg-neutral-500 m-2 text-balance"
         >
-          <Link href={`/posts/${post.id}`} key={post.id}>
+          {/* <Link href={`/posts/${post.id}`} key={post.id}> */}
 
 <div className="flex justify-between items-center">
             <h2 className="font-extrabold">{post.title}</h2>
@@ -23,8 +30,8 @@ export default function AllPosts() {
 
 </div>
 
-            <span>{post.content}</span>
-          </Link>
+            <span dangerouslySetInnerHTML={{__html: renderLinks(post.content)}}></span>
+          {/* </Link> */}
         </article>
       ))}
     </section>
