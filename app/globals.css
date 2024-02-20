@@ -9,7 +9,7 @@ h3 {
   @apply text-2xl;
 }
 
-a {
+p a {
   @apply  text-purple-700 hover:bg-slate-300  dark:text-purple-400 dark:hover:bg-slate-700;
 }
 

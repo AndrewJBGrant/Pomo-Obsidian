@@ -23,7 +23,7 @@ const ThemeSwitch = () => {
 <div>
 <button
    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-   className="hover:text-red-500 dark:border-gray-200 rounded-md p-4">
+   className="hover:text-red-500  dark:hover:bg-slate-500 rounded-md p-4">
 
  {theme === "light" ? (
     <span className="text-3xl"> <FaRegMoon /> </span> ) : (

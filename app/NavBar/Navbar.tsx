@@ -16,9 +16,9 @@ const NavBar = () => {
 const { color } = useColorContext()
 
   return (
-    <nav className={`bg-neutral-100 dark:bg-zinc-800 fixed top-0 h-screen flex flex-col border-r`}>
+    <nav className={`bg-neutral-100 dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
+      <Clock />
       <ThemeSwitch />
-            <Clock />
 
     </nav>
   );

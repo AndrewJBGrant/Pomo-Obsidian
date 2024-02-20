@@ -28,7 +28,7 @@ export default function RootLayout({
       className={`${MainFont.className} antialiased`}
       suppressHydrationWarning
     >
-      <body className="grid grid-cols-9 gap-1 relative bg-neutral-50 dark:bg-zinc-700 rounded-md">
+      <body className="grid grid-cols-9 gap-1 relative bg-neutral-50 dark:bg-zinc-800 rounded-md">
         <Providers>
           <NavBar />
 
