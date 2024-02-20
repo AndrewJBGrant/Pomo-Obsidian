@@ -21,3 +21,13 @@ p a {
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+.scrollToTopButton {
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrollToTopButton.visible {
+  opacity: 1;
+}
