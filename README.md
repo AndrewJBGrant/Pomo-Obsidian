@@ -5,7 +5,7 @@ A practical way to learn the best practices of
 ### TypeScript
 ### Tailwind CSS
 ### React
-### Prisma
+### SupaBase
 and testing libraries like **Jest** and **React** testing library
 Using # Next.js allows me to work front and back end in **TypeScript** aswell as working with **RSC** (React server components)
 I wanted to minimise the amount of npm packages used and instead work on coding as much as possible myself to get a better understanding of how JavaScript is working under the hood.
