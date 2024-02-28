@@ -1,23 +1,46 @@
 "use client"
-import { useContext, useState, createContext } from "react";
+import { useContext, useState, createContext, useLayoutEffect } from "react";
 
-const IndexContext = createContext<any>(undefined);
+const ColorContext = createContext<any>(undefined);
 
 export function IndexWrapper({ children } : {
   children: React.ReactNode;
 }) {
-  const [value, setValue] = useState("Piggley")
+
+
+
+  const defaultColor = "bg-red-500"
+
+
+const getInitialState = () => {
+  if (typeof window !== "undefined") {
+    const color = localStorage.getItem("color");
+    return color ? JSON.parse(color) : defaultColor;
+  }
+};
+  const [color, setColor] = useState("getIntialState")
+
+  useLayoutEffect(() => {
+    console.log(color, "Here in the useLayout!!")
+    localStorage.setItem("color", JSON.stringify(color));
+  }, [color]);
+
+
+
+
+
+
 
 return (
-<IndexContext.Provider value={{
-  value,
-  setValue
+<ColorContext.Provider value={{
+  color,
+  setColor
 }}>
   { children }
-</IndexContext.Provider>
+</ColorContext.Provider>
 )
 };
 
-export function useIndexContext() {
-  return useContext(IndexContext)
+export function useColorContext() {
+  return useContext(ColorContext)
 };

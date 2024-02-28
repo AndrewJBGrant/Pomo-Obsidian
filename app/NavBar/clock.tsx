@@ -23,7 +23,7 @@ export default function Clock() {
   const currentDate = getDate();
 
   return (
-    <span className={`dark:hover:bg-slate-500 rounded-md`}>
+    <span className={`rounded-md`}>
       {currentDate}
       {/* <FaRegClock /> */}
     </span>

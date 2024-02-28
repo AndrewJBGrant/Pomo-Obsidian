@@ -1,11 +1,8 @@
 "use client";
+import { FaArrowCircleUp } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 
-
 const inBrowser = () => typeof window !== "undefined";
-
-
-
 
 export default function ScrollTopButton() {
 const [visible, setVisible] = useState(false)
@@ -26,21 +23,14 @@ window.scrollTo({ top: 0, behavior: "smooth"})
   };
 
   useEffect(() => {
-
     window.addEventListener('scroll', handleScroll);
-
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
 return(
-
-  <button className={`... scrollToTopButton ${visible ? 'visible' : ''}`}
-        onClick={scrollTop}>TOP</button>
+  <button className={`... scrollToTopButton ${visible ? 'visible' : ''} text-3xl`}
+        onClick={scrollTop}><FaArrowCircleUp /></button>
 )
-
-
-
 };

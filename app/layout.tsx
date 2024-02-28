@@ -4,7 +4,6 @@ import "./globals.css";
 
 import { IndexWrapper } from "./context/indexContext";
 
-
 import NavBar from "./NavBar/Navbar";
 import RightSide from "./rightSide";
 import { ThemeProviders } from "./providers/ThemeProvider";
@@ -32,22 +31,21 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex flex-row bg-neutral-50 dark:bg-zinc-800 rounded-md">
-<IndexWrapper>
+        <IndexWrapper>
+          <ThemeProviders>
+            <aside className="grow-0">
+              <NavBar />
+            </aside>
 
-        <ThemeProviders>
-         <aside className="grow-0">
-          <NavBar />
-        </aside>
-
-          {/* <span className="">
+            {/* <span className="">
             <SearchBar type={"/"} />
           </span> */}
-          <main className="grow">{children}</main>
-          <aside className="shrink w-full">
-          <RightSide />
-          </aside>
-        </ThemeProviders>
-</IndexWrapper>
+            <main className="grow">{children}</main>
+            <aside className="shrink w-full">
+              <RightSide />
+            </aside>
+          </ThemeProviders>
+        </IndexWrapper>
       </body>
     </html>
   );
