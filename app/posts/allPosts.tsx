@@ -13,7 +13,7 @@ export default function AllPosts() {
           key={post.id}
           className="bg-neutral-100 dark:bg-zinc-700 m-2 text-balance p-6 rounded-md shadow-md leading-relaxed"
         >
-          <Link href={`/posts/${post.id}`} key={post.id}>
+          {/* <Link href={`/posts/${post.id}`} key={post.id}> */}
             <div className="flex justify-between items-center">
               <h2 className="text-balance pb-2">{post.title}</h2>
               <h3 className="text-slate-600 dark:text-slate-300">
@@ -25,7 +25,7 @@ export default function AllPosts() {
               className="font-medium line-clamp-4"
               dangerouslySetInnerHTML={{ __html: renderLinks(post.content) }}
             ></p>
-          </Link>
+          {/* </Link> */}
         </article>
       ))}
     </section>

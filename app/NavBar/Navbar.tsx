@@ -11,11 +11,18 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`${color} dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
+      className={`dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
 
       <Clock />
-      <ThemeSwitch />
+
+<span className="">
+    <ThemeSwitch />
+</span>
+
+<span className={`hover:text-${color}`}>
       <ScrollTopButton />
+
+</span>
 
     </nav>
   );

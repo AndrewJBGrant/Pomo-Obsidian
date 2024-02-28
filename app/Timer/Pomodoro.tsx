@@ -1,8 +1,7 @@
 "use client";
 
-import NavBar from "../NavBar/Navbar";
 import { useColorContext } from "../context/indexContext";
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // export type ColorContextType = "bg-red-500" | "bg-sky-600" | "bg-emerald-600";
 
@@ -43,15 +42,15 @@ let timer: null | ReturnType<typeof setTimeout> = null;
     }
 
 if (!running || time === 0){
-  clearInterval(timer);
+  clearInterval(time);
 }
-return () => clearInterval(timer);
+return () => clearInterval(time);
 }, [running, time]);
 
 
   return (
     <>
-     <div className={`flex flex-col justify-center p-6 ${color}`}>
+     <div className={`flex flex-col justify-center p-6 bg-${color}`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
             0{Math.floor(timeLeft / 60)}:
@@ -65,17 +64,17 @@ return () => clearInterval(timer);
         )}
 
         <button
-          className={`px-8 text-3xl flex justify-center ${color}`}
+          className={`px-8 text-3xl flex justify-center bg-${color}`}
           onClick={handleTimerActive}>
          {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid ${color}`}>
+      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid bg-${color}`}>
         <button className=""
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor("bg-red-500");
+              setColor("red-500");
             }
           }}
         >
@@ -85,7 +84,7 @@ return () => clearInterval(timer);
         <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(10);
-            setColor("bg-sky-600");
+            setColor("sky-600");
           }}
         >
           Short Break
@@ -94,7 +93,7 @@ return () => clearInterval(timer);
         <button
           onClick={() => {
             handleTimeOption(900);
-            setColor("bg-emerald-600");
+            setColor("emerald-600");
           }}
         >
           {" "}
