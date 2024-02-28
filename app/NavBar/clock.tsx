@@ -1,4 +1,6 @@
-import { FaRegClock } from "react-icons/fa";
+// import { FaRegClock } from "react-icons/fa";
+
+
 
 export default function Clock() {
   function getDate() {
@@ -17,10 +19,11 @@ export default function Clock() {
     );
   }
 
+
   const currentDate = getDate();
 
   return (
-    <span className=" dark:hover:bg-slate-500 rounded-md">
+    <span className={`dark:hover:bg-slate-500 rounded-md`}>
       {currentDate}
       {/* <FaRegClock /> */}
     </span>

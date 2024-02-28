@@ -3,15 +3,20 @@
 import { posts } from "../data";
 import Link from "next/link";
 import renderLinks from "../HighlightLinks";
+import { useIndexContext } from "../context/indexContext";
 
 export default function AllPosts() {
+
+
+  const { value, setValue } = useIndexContext()
 
   return (
     <section className="flex min-h-screen flex-col items-center justify-between">
 
 
 
-
+<h1>Hello There {value}!!!!!</h1>
+<button onClick={() => setValue("Katya")}>Change</button>
 
 
 

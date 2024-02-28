@@ -2,26 +2,24 @@
 
 import ThemeSwitch from "../components/ThemeChanger";
 import Clock from "./clock";
-
-// import { useContext } from "react";
-// import { Context } from "../context/contextObject";
-
-import { useColorContext } from "../context/contextObject";
 import ScrollTopButton from "./ScrollTop";
-// const colors = ["bg-red-500", "bg-sky-600", "bg-emerald-600"];
 
+import { useIndexContext } from "../context/indexContext";
 
 const NavBar = () => {
-//  const contextValue = useContext(Context);
 
-const { color } = useColorContext()
+const { value } = useIndexContext()
+
 
   return (
-    <nav className={`bg-neutral-100 dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
+    <nav className={` dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
+
+<h1>{value}</h1>
+
+
       <Clock />
       <ThemeSwitch />
       <ScrollTopButton />
-
     </nav>
   );
 };
