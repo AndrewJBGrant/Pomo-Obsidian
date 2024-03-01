@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 
+import { IndexWrapper } from "./context/indexContext";
+
 import NavBar from "./NavBar/Navbar";
 import RightSide from "./rightSide";
-import { Providers } from "./providers";
+import { ThemeProviders } from "./providers/ThemeProvider";
 import SearchBar from "./components/SearchBar";
 
 const MainFont = Roboto({
@@ -28,26 +30,15 @@ export default function RootLayout({
       className={`${MainFont.className} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex justify-between dark:bg-zinc-800 rounded-md">
+      <body className="grid grid-cols-9 gap-1 relative bg-neutral-50 dark:bg-zinc-800 rounded-md">
         <Providers>
-
-
-
           <NavBar />
 
-     <main className="bg-slate-500 grow basis-1/2">{children}</main>
-
-{/*
-<div className="bg-red-400 basis-1/4 relative">
-<article className="fixed"> */}
-  <RightSide />
-{/* </article>
-</div> */}
-
-
-
-
-
+          <span className="justify-self-center">
+            <SearchBar type={"/"} />
+          </span>
+          <main className="col-start-1 col-end-7">{children}</main>
+          <RightSide />
         </Providers>
       </body>
     </html>
