@@ -14,15 +14,17 @@ import ScrollTopButton from "./ScrollTop";
 const NavBar = () => {
 //  const contextValue = useContext(Context);
 
-const { color } = useColorContext()
+// const { color } = useColorContext()
 
   return (
-    <nav className={`bg-neutral-100 dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
+
+<div className="flex basis-24">
+    <nav className={` dark:bg-zinc-700 fixed top-0 h-screen flex flex-col border-r`}>
       <Clock />
       <ThemeSwitch />
       <ScrollTopButton />
-
     </nav>
+</div>
   );
 };
 export default NavBar;

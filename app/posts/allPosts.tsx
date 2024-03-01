@@ -1,7 +1,7 @@
 "use client";
 
 import { posts } from "../data";
-import Link from "next/link";
+// import Link from "next/link";
 import renderLinks from "../HighlightLinks";
 
 export default function AllPosts() {

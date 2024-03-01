@@ -28,15 +28,26 @@ export default function RootLayout({
       className={`${MainFont.className} antialiased`}
       suppressHydrationWarning
     >
-      <body className="grid grid-cols-9 gap-1 relative bg-neutral-50 dark:bg-zinc-800 rounded-md">
+      <body className="flex justify-between dark:bg-zinc-800 rounded-md">
         <Providers>
+
+
+
           <NavBar />
 
-          <span className="justify-self-center">
-            <SearchBar type={"/"} />
-          </span>
-          <main className="col-start-1 col-end-7">{children}</main>
-          <RightSide />
+     <main className="bg-slate-500 grow basis-1/2">{children}</main>
+
+{/*
+<div className="bg-red-400 basis-1/4 relative">
+<article className="fixed"> */}
+  <RightSide />
+{/* </article>
+</div> */}
+
+
+
+
+
         </Providers>
       </body>
     </html>
