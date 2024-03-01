@@ -30,7 +30,7 @@ window.scrollTo({ top: 0, behavior: "smooth"})
   }, []);
 
 return(
-  <button className={`... scrollToTopButton ${visible ? 'visible' : ''} text-3xl`}
+  <button className={`scrollToTopButton ${visible ? 'visible' : ''} text-3xl`}
         onClick={scrollTop}><FaArrowCircleUp /></button>
 )
 };

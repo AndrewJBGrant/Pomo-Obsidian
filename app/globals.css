@@ -31,3 +31,9 @@ p a {
 .scrollToTopButton.visible {
   opacity: 1;
 }
+
+.openDiv {
+ transition: opacity 0.3s ease-in-out;
+
+}
+

@@ -29,8 +29,8 @@ const ThemeSwitch = () => {
    className={`rounded-md p-4 border bg-${color}`}>
 
  {theme === "light" ? (
-    <span className="text-3xl"> <FaRegMoon /> </span> ) : (
-    <span className="text-3xl"> <GoSun /> </span> )
+    <span className="text-2xl"> <FaRegMoon /> </span> ) : (
+    <span className="text-2xl"> <GoSun /> </span> )
  }
  </button>
 </div>
