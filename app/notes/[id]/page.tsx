@@ -1,28 +1,28 @@
-import { posts } from '../../data';
+import { notes } from '../../data';
 import Link from "next/link";
 
-interface Post {
+interface Note {
   id: number;
   title: string;
   content: string;
 }
 
-posts.forEach(post => {
-    const newData = post.id
+notes.forEach(note => {
+    const newData = note.id
 
    // console.log(newData)
 });
 
 
- const PostPage = ({ post }: { post: Post }) => {
-   if (!post) {
+ const PostPage = ({ note }: { note: Note }) => {
+   if (!note) {
      return <div>Post not found <Link href={`/`}>Go Back</Link></div>;
    }
 
    return (
      <div>
-       <h1>{post.title}</h1>
-       <p>{post.content}</p>
+       <h1>{note.title}</h1>
+       <p>{note.content}</p>
 
 
    <Link href={`/`}>Go Back</Link>

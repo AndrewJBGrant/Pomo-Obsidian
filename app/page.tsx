@@ -1,13 +1,14 @@
-// import PostForm from "./posts/PostForm";
-// import AllPosts from "./posts/allPosts";
+
+
 import Link from "next/link"
+import AllNotes from "./notes/allNotes";
 
 
 export default function Home() {
   return (
     <section className="flex min-h-screen flex-col container mx-auto px-24">
-      {/* <PostForm /> */}
-      {/* <AllPosts /> */}
+
+
 
           <Link
             href="/login"
@@ -16,6 +17,9 @@ export default function Home() {
             Login
           </Link>{" "}
 
+
+
+<AllNotes />
 
 
 
