@@ -1,17 +1,13 @@
 "use client";
 
-import { useColorContext } from "../context/indexContext";
 import { useState, useEffect } from "react";
 
-// export type ColorContextType = "bg-red-500" | "bg-sky-600" | "bg-emerald-600";
-
-// export interface Color {
-//   color: string
-// };
 
 export default function PomoDoroTimer(props: { timerActive: boolean}) {
 
 const [running, setIsRunning] = useState(false);
+
+// Start or Pause Button
 const handleTimerActive = () => {
   setIsRunning((prev) => !prev)
 };
@@ -23,7 +19,6 @@ const handleTimerActive = () => {
   };
 
 
-const { color, setColor } = useColorContext()
 
 let interval: null | ReturnType<typeof setTimeout> = null;
 if (props.timerActive) {
@@ -50,7 +45,7 @@ return () => clearInterval(time);
 
   return (
     <>
-     <div className={`flex flex-col justify-center p-6 bg-${color}`}>
+     <div className={`flex flex-col justify-center p-6 m-5 bg-teal-400`}>
         {time === 300 ? (
           <span className="flex justify-center text-8xl">
             0{Math.floor(timeLeft / 60)}:
@@ -63,28 +58,47 @@ return () => clearInterval(time);
           </span>
         )}
 
+
         <button
-          className={`px-8 text-3xl flex justify-center bg-${color}`}
+          className={`px-8 text-3xl flex justify-center bg-teal-400`}
           onClick={handleTimerActive}>
          {running ? "Pause" : "Start"}
         </button>
       </div>
-      <div className={`text-2xl grid grid-cols-3 divide-x divide-solid bg-${color}`}>
-        <button className=""
+
+
+
+      <div className={`text-2xl flex divide-x divide-solid bg-teal-400`}>
+        <button
           onClick={() => {
             {
               handleTimeOption(1500);
-              setColor("red-500");
             }
           }}
         >
           Focus
         </button>
 
-        <button className={`focus-within: bg-opacity-50`}
+      </div>
+    </>
+  );
+}
+
+
+
+
+// const { color, setColor } = useColorContext()
+//import { useColorContext } from "../context/indexContext";
+// export type ColorContextType = "bg-red-500" | "bg-sky-600" | "bg-emerald-600";
+
+// export interface Color {
+//   color: string
+// };
+
+        {/* <button className={`focus-within: bg-opacity-50`}
           onClick={() => {
             handleTimeOption(10);
-            setColor("sky-600");
+
           }}
         >
           Short Break
@@ -93,13 +107,9 @@ return () => clearInterval(time);
         <button
           onClick={() => {
             handleTimeOption(900);
-            setColor("emerald-600");
+
           }}
         >
           {" "}
           Long Break
-        </button>
-      </div>
-    </>
-  );
-}
+        </button> */}

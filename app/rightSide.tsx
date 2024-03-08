@@ -3,12 +3,13 @@ import { useState } from "react";
 
 import PomoDoroTimer from "./Timer/Pomodoro";
 import AllTodos from "../app/todos/todoData";
+import TimerTest from "./Timer/TestPomo";
 
 
 
 
 export default function RightSide() {
-const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(true);
 
 //  console.log(typeof(isOpen),"What isOpen?")
 //   console.log(typeof(setIsOpen),"What isSetIsOpen?")
@@ -29,10 +30,12 @@ const [isOpen, setIsOpen] = useState(false);
 
 
         <div className={`fixed`}>
-          {/* <PomoDoroTimer timerActive={false} /> */}
+           {/* <PomoDoroTimer timerActive={false} /> */}
 
-          <div className="text-center">HERE A NEW TODO</div>
+          {/* <div className="text-center">HERE A NEW TODO</div> */}
           <div className="overflow-y-auto h-96">
+
+            <TimerTest />
             {/* <AllTodos /> */}
           </div>
         </div>

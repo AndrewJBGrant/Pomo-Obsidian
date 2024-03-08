@@ -29,11 +29,11 @@ export default function RootLayout({
       className={`${MainFont.className} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex bg-neutral-50 dark:bg-zinc-800 rounded-md">
+      <body className="flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
         <ThemeProviders>
-          <NavBar />
+          {/* <NavBar /> */}
 
-          <main className="bg-teal-800 grow">{children}</main>
+          {/* <main className="min-h-screen mx-auto max-w-2xl px-5 py-12 grow">{children}</main> */}
 
 
           <RightSide />

@@ -34,6 +34,24 @@ p a {
 
 .openDiv {
  transition: opacity 0.3s ease-in-out;
-
 }
 
+.timer-btns {
+font-size: 20px;
+padding: 2px 12px;
+font-weight: 400;
+border-radius: 4px;
+opacity: 0.80;
+
+transition: all .2s ease-in-out;
+}
+
+.timer-btns:hover {
+transform: scale(1.1);
+background: #52525b;
+}
+
+.timer-btns:focus {
+background: #52525b;
+opacity: 1;
+}
