@@ -5,7 +5,7 @@ import { GoSun } from "react-icons/go"
 
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import { useColorContext } from "../context/indexContext";
+// import { useColorContext } from "../context/indexContext";
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -20,19 +20,20 @@ const ThemeSwitch = () => {
     return null
   }
 
-   const { color } = useColorContext();
+  //  const { color } = useColorContext();
 
   return (
 <div>
 <button
    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-   className={`rounded-md p-4 border bg-${color}`}>
+   className={`rounded-md p-4`}>
 
  {theme === "light" ? (
-    <span className="text-2xl"> <FaRegMoon /> </span> ) : (
-    <span className="text-2xl"> <GoSun /> </span> )
+    <span className="text-3xl"> <FaRegMoon /> </span> ) : (
+    <span className="text-4xl"> <GoSun /> </span> )
  }
  </button>
+  <span className="navbar-tooltip group-hover:scale-100">{"This is the time"}</span>
 </div>
   )
 }

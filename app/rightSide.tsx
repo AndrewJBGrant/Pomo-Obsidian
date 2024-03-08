@@ -20,29 +20,29 @@ const [isOpen, setIsOpen] = useState(true);
 
   <div className="fixed top-1/2 z-40 transition ease-in-out duration-300">
           <button>
-            <span className="absolute bg-teal-500 p-4" onClick={() => setIsOpen(!isOpen)}>Open</span>
+            <span className="absolute p-4" onClick={() => setIsOpen(!isOpen)}>Open</span>
           </button>
         </div>
       ) : (
 
-      <div className={`relative basis-1/4 bg-emerald-500`}>
+      <div className={`relative basis-1/4`}>
 
 
 
-        <div className={`fixed`}>
-           {/* <PomoDoroTimer timerActive={false} /> */}
-
-          {/* <div className="text-center">HERE A NEW TODO</div> */}
-          <div className="overflow-y-auto h-96">
+        <div className={`fixed m-4 rounded-md border-l-2`}>
 
             <TimerTest />
-            {/* <AllTodos /> */}
+
+          <div className="text-center">HERE A NEW TODO</div>
+          <div className="overflow-y-auto h-96">
+
+            <AllTodos />
           </div>
         </div>
        <div className="fixed top-1/2 transition hover:opacity-70">
-          <button className="transition hover:scale-110">
+          {/* <button className="transition hover:scale-110">
             <span className="p-3 absolute bg-slate-300" onClick={() => setIsOpen(!isOpen)}>close</span>
-          </button>
+          </button> */}
         </div>
       </div>
 

@@ -13,13 +13,11 @@ const TestTimer: React.FC = () => {
   // const alarmSound = new Audio("../sounds/Timer_end.mp3");
   //console.log(typeof(alarmSound)) => Object!
 
-// state contolling the color
+  // state contolling the color
   const [color, setColor] = useState("bg-red-500");
 
   // state controlling time on the clock
-  const [timeLeft, setTimeLeft] = useState<number>(
-    TimerDuration.FOCUS_25_MIN
-  );
+  const [timeLeft, setTimeLeft] = useState<number>(TimerDuration.FOCUS_25_MIN);
   // state variable on weather timer is running or not
   const [timerRunning, setTimerRunning] = useState<boolean>(false);
 
@@ -30,24 +28,14 @@ const TestTimer: React.FC = () => {
     setTimerRunning(false);
   };
 
+  // effect for controlling sounds and setting next timer
+  useEffect(() => {
+    if (timeLeft === 0) {
+      //   alarmSound.play();
+    }
+  }, [timeLeft]);
 
-
-
-// effect for controlling sounds and setting next timer
-   useEffect(() => {
-     if (timeLeft === 0) {
-  //   alarmSound.play();
-     }
-   }, [timeLeft])
-
-
-
-
-
-
-
-
-// effect for timer countdown
+  // effect for timer countdown
   useEffect(() => {
     let interval: NodeJS.Timeout | undefined;
 
@@ -81,14 +69,34 @@ const TestTimer: React.FC = () => {
       .padStart(2, "0")}`;
   };
 
+
+const ToolTip = ({ children, text }: any) => (
+  <div className="group relative">
+    {children}
+    <span className="navbar-tooltip group-hover:scale-100">{text}</span>
+  </div>
+);
+
+
+
+
   return (
-    <div className={`flex flex-col justify-center p-4 m-5 ${color}`}>
+    <div className={`flex flex-col justify-center p-4 ${color}`}>
       <div className="flex justify-center text-8xl">{formatTime(timeLeft)}</div>
 
-      <button  className="text-2xl" onClick={pauseTimer}>{timerRunning ? "Pause" : "Start"}</button>
+{/* <ToolTip  text={"Start or stop timer"}
+     children={ <button className="text-3xl " onClick={pauseTimer}>
+        {timerRunning ? "Pause" : "Start"}
+      </button>} /> */}
+<button className="text-3xl " onClick={pauseTimer}>
+        {timerRunning ? "Pause" : "Start"}
+      </button>
 
-      <div className={`text-2xl grid grid-cols-2 gap-2 mt-3 justify-items-start`}>
-        <button className="timer-btns justify-self-stretch"
+      <div
+        className={`text-2xl grid grid-cols-2 gap-2 mt-3 justify-items-start`}
+      >
+        <button
+          className="timer-btns"
           onClick={() =>
             handleTimeOption(TimerDuration.FOCUS_25_MIN, "bg-red-500")
           }
@@ -96,33 +104,32 @@ const TestTimer: React.FC = () => {
           Focus
         </button>
 
-
-        <button className="timer-btns justify-self-stretch"
+        <button
+          className="timer-btns"
           onClick={() =>
-            handleTimeOption(TimerDuration.FOCUS_50_MIN, "bg-blue-300")
+            handleTimeOption(TimerDuration.FOCUS_50_MIN, "bg-red-700")
           }
         >
           Long Focus
         </button>
 
-        <button className="timer-btns justify-self-stretch"
+        <button
+          className="timer-btns"
           onClick={() =>
-            handleTimeOption(TimerDuration.BREAK_5_MIN, "bg-green-300")
+            handleTimeOption(TimerDuration.BREAK_5_MIN, "bg-cyan-600")
           }
         >
           Break
         </button>
 
-
-        <button className="timer-btns justify-self-stretch"
+        <button
+          className="timer-btns"
           onClick={() =>
-            handleTimeOption(TimerDuration.BREAK_10_MIN, "bg-teal-900")
+            handleTimeOption(TimerDuration.BREAK_10_MIN, "bg-sky-700")
           }
         >
           Long Break
         </button>
-
-
       </div>
     </div>
   );

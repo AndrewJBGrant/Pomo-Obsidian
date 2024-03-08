@@ -23,9 +23,12 @@ export default function Clock() {
   const currentDate = getDate();
 
   return (
-    <span className={`rounded-md`}>
+    <>
+    <span className="rounded-md navbar-icon group">
       {currentDate}
       {/* <FaRegClock /> */}
     </span>
+      <span className="navbar-tooltip group-hover:scale-100">{"This is the time"}</span>
+    </>
   );
 }
