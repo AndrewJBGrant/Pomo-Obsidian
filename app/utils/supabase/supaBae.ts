@@ -22,11 +22,11 @@ export const supaBase = createClient(supabaseUrl, supabaseKey)
 // func to get all blog posts and sort
 export async function getAllGroups() {
   const { data, error } = await supaBase
-  .from('groups')
+  .from('notes')
   .select("*")
 
 
-  console.log(data)
+  console.log("Data here:", data)
   return data
 
 }

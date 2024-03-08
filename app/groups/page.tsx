@@ -1,20 +1,16 @@
-
-import renderLinks from "../HighlightLinks";
-import { getAllGroups } from "../utils/supabase/supaBae";
-
 import { createClient } from "../utils/supabase/server";
 
-export default async function AllNotes() {
+export default async function AllGroups() {
 
   const supabase = createClient();
 
 const { data: { user },
 } = await supabase.auth.getUser();
 
-async function getMyNotes() {
+async function getMyGroups() {
 
   const { data, error } = await supabase
-  .from("notes")
+  .from("groups")
   .select("*")
 
 return data
@@ -22,7 +18,7 @@ return data
 }
 
 
-const myNotes = await getMyNotes();
+const myGroups = await getMyGroups();
 
 // const notes = await getAllGroups()
 
@@ -30,8 +26,7 @@ const myNotes = await getMyNotes();
     <section className="mx-auto max-w-2xl px-5 py-12">
 <span className="text-3xl font-extrabold">Hello {user.email}</span>
 
-
-<pre>{JSON.stringify(myNotes, null, 2)}</pre>
+<pre>{JSON.stringify(myGroups, null, 2)}</pre>
 
     </section>
   ) : (

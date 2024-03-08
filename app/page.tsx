@@ -10,13 +10,6 @@ export default function Home() {
 
 
 
-          <Link
-            href="/login"
-            className="font-bold hover:underline text-foreground/80"
-          >
-            Login
-          </Link>{" "}
-
 
 
 <AllNotes />

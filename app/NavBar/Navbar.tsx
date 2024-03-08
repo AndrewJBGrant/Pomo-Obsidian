@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link"
 import ThemeSwitch from "../components/ThemeChanger";
 import Clock from "./clock";
 import ScrollTopButton from "./ScrollTop";
@@ -13,7 +14,7 @@ const NavBar = () => {
 
   return (
 
- 
+
 
 
 
@@ -22,6 +23,14 @@ const NavBar = () => {
       <Clock />
     <ThemeSwitch />
       <ScrollTopButton />
+
+  <Link
+            href="/login"
+            className="font-bold hover:underline text-foreground/80"
+          >
+            Login
+          </Link>{" "}
+
     </nav>
 
   );
