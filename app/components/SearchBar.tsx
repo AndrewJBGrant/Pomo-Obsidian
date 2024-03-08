@@ -88,8 +88,6 @@ setSearchQuery("")
   return (
 
 <search>
-
-
     <div className="text-1xl w-1/2 flex rounded-md fixed text-gray-900 dark:placeholder-gray-400 dark:text-white dark:bg-slate-900">
 <span className="place-self-center m-2">
 {searchQuery.length === 0 ? <button className="text-2xl"><FaMagnifyingGlass/></button> :
@@ -103,9 +101,6 @@ setSearchQuery("")
       placeholder={placeHolderText}
 
     />
-
-
-
     </div>
 </search>
   );

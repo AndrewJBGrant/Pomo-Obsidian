@@ -7,14 +7,13 @@ import TodoLi from "./TodoLi";
 export type TodoProps = {
   id: number;
   content: string;
-  user_id: number;
 };
 
- const Todo: React.FC<{ todo: TodoProps }> = ({ todo }) => {
+ const Todo: React.FC = () => {
   return (
-    <ol>
+    <ol className="">
    {todos.map((todo) => (
-        <TodoLi key={todo.id} title={todo.content}>
+        <TodoLi key={todo.id} content={todo.content}>
           </TodoLi>
       ))}
     </ol>

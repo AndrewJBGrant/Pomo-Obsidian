@@ -1,6 +1,7 @@
 "use client";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { useState, useEffect } from 'react';
+import NavIcons from "./NavIcons";
 
 const inBrowser = () => typeof window !== "undefined";
 
@@ -30,7 +31,11 @@ window.scrollTo({ top: 0, behavior: "smooth"})
   }, []);
 
 return(
-  <button className={`scrollToTopButton ${visible ? 'visible' : ''} text-3xl`}
+  <>
+  <NavIcons text={"Back to top"}>
+  <button className={`scrollToTopButton ${visible ? 'visible' : ''}`}
         onClick={scrollTop}><FaArrowCircleUp /></button>
+  </NavIcons>
+  </>
 )
 };

@@ -1,20 +1,17 @@
 import renderLinks from "../HighlightLinks";
 
 export default function TodoLi({
-  title,
-  key
-
+  content,
 }: {
-  title: string;
-key: number
+  content: string;
 }) {
   return (
-    <li className="m-5 links">
-      <input type="checkbox" id={title} className={`mr-2 peer`} />
+    <li className="m-2 links hover:bg-slate-400 p-3">
+      <input type="checkbox" id={content} className={`mr-2 peer`} />
       <label
-        htmlFor={title}
-        className={`text-md peer-checked:line-through font-semibold hover:cursor-pointer`}
-      dangerouslySetInnerHTML={{__html: renderLinks(title)}}>
+        htmlFor={content}
+        className={` peer-checked:line-through font-semibold hover:cursor-pointer`}
+      dangerouslySetInnerHTML={{__html: renderLinks(content)}}>
 
       </label>
     </li>

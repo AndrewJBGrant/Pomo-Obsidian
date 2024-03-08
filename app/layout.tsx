@@ -32,7 +32,6 @@ export default function RootLayout({
       <body className="flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
         <ThemeProviders>
           <NavBar />
-
           <main className="min-h-screen mx-auto max-w-2xl px-5 py-12 grow">
             {children}
           </main>

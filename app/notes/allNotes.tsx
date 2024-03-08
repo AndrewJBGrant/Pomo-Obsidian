@@ -1,11 +1,20 @@
-import renderLinks from "../HighlightLinks";
+// import renderLinks from "../HighlightLinks";
 //import { getAllGroups } from "../utils/supabase/supaBae";
 //import { createClient } from "../utils/supabase/server";
+
+import Link from "next/link";
+
 
 export default async function AllNotes() {
   return (
     <article>
       <h1>Here the users notes will be laid out</h1>
+
+<Link href="/notes/1">
+SEE NOTES
+</Link>
+
+
     </article>
   );
 }

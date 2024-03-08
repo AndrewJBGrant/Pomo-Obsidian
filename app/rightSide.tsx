@@ -1,15 +1,13 @@
 "use client";
 import { useState } from "react";
-
-import PomoDoroTimer from "./Timer/Pomodoro";
-import AllTodos from "../app/todos/todoData";
 import TimerTest from "./Timer/TestPomo";
+import Todo from "./todos/Todo";
 
 
 
 
 export default function RightSide() {
-const [isOpen, setIsOpen] = useState(true);
+const [isOpen, setIsOpen] = useState(false);
 
 //  console.log(typeof(isOpen),"What isOpen?")
 //   console.log(typeof(setIsOpen),"What isSetIsOpen?")
@@ -29,14 +27,13 @@ const [isOpen, setIsOpen] = useState(true);
 
 
 
-        <div className={`fixed m-4 rounded-md border-l-2`}>
+        <div className={`fixed border-l-2 h-full`}>
 
             <TimerTest />
 
           <div className="text-center">HERE A NEW TODO</div>
           <div className="overflow-y-auto h-96">
-
-            <AllTodos />
+            <Todo />
           </div>
         </div>
        <div className="fixed top-1/2 transition hover:opacity-70">

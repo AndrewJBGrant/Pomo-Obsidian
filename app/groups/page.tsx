@@ -1,17 +1,22 @@
 // import { createClient } from "../utils/supabase/server";
 
+import BackBtn from "../components/BackBtn";
+
 export default async function AllGroups() {
-
-
-return (
-  <div>
-    Here all groups will go!
-  </div>
-)
-
-};
-
-
+  return (
+    <div>
+      <header className="mb-14 flex flex-row place-content-between">
+        <span>
+          <BackBtn />
+        </span>
+        <span>New Group?</span>
+      </header>
+      <h1>
+        Here all groups will go!
+        </h1>
+    </div>
+  );
+}
 
 //   const supabase = createClient();
 // const { data: { user },

@@ -93,10 +93,10 @@ const ToolTip = ({ children, text }: any) => (
       </button>
 
       <div
-        className={`text-2xl grid grid-cols-2 gap-2 mt-3 justify-items-start`}
+        className={` grid grid-cols-4 gap-2 mt-3 justify-items-start`}
       >
         <button
-          className="timer-btns"
+
           onClick={() =>
             handleTimeOption(TimerDuration.FOCUS_25_MIN, "bg-red-500")
           }
@@ -105,7 +105,7 @@ const ToolTip = ({ children, text }: any) => (
         </button>
 
         <button
-          className="timer-btns"
+
           onClick={() =>
             handleTimeOption(TimerDuration.FOCUS_50_MIN, "bg-red-700")
           }
@@ -114,21 +114,21 @@ const ToolTip = ({ children, text }: any) => (
         </button>
 
         <button
-          className="timer-btns"
+
           onClick={() =>
             handleTimeOption(TimerDuration.BREAK_5_MIN, "bg-cyan-600")
           }
         >
-          Break
+          5
         </button>
 
         <button
-          className="timer-btns"
+
           onClick={() =>
             handleTimeOption(TimerDuration.BREAK_10_MIN, "bg-sky-700")
           }
         >
-          Long Break
+          15
         </button>
       </div>
     </div>

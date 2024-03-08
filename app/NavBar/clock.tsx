@@ -1,17 +1,16 @@
 // import { FaRegClock } from "react-icons/fa";
 
-
+import NavIcons from "./NavIcons";
 
 export default function Clock() {
   function getDate() {
     const today = new Date();
-    const month = today.getMonth() + 1;
-    const year = today.getFullYear();
     const date = today.getDate();
     const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
     const day = today.getDay();
     const currentDay = dayNames[day];
-    return (
+
+   return (
       <div className="grid justify-items-center">
         <span className="text-2xl font-extrabold">{date}</span>
         <span className="text-xl">{currentDay}</span>
@@ -19,16 +18,21 @@ export default function Clock() {
     );
   }
 
+// function getFullDate() {
+//   let new_Date: Date = new Date();
+//   let result = new_Date.toLocaleString("en-GB");
+
+// return (
+//   <div className="text-xl m-4 font-bold">{result}</div>
+// )
+// }
 
   const currentDate = getDate();
+  // const fullDate = getFullDate()
 
   return (
     <>
-    <span className="rounded-md navbar-icon group">
-      {currentDate}
-      {/* <FaRegClock /> */}
-    </span>
-      <span className="navbar-tooltip group-hover:scale-100">{"This is the time"}</span>
+      <NavIcons icon={currentDate} text={"Full time will go here"} />
     </>
   );
 }
