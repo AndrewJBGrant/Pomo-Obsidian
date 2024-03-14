@@ -11,7 +11,7 @@ export default function Clock() {
     const currentDay = dayNames[day];
 
    return (
-      <div className="grid justify-items-center">
+      <div className="grid justify-items-center opacity-85 hover:opacity-100">
         <span className="text-2xl font-extrabold">{date}</span>
         <span className="text-xl">{currentDay}</span>
       </div>

@@ -7,7 +7,7 @@ import Todo from "./todos/Todo";
 
 
 export default function RightSide() {
-const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(true);
 
 //  console.log(typeof(isOpen),"What isOpen?")
 //   console.log(typeof(setIsOpen),"What isSetIsOpen?")

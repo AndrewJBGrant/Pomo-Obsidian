@@ -69,15 +69,11 @@ const TestTimer: React.FC = () => {
       .padStart(2, "0")}`;
   };
 
+localStorage.setItem("Timer", JSON.stringify(timeLeft));
 
-const ToolTip = ({ children, text }: any) => (
-  <div className="group relative">
-    {children}
-    <span className="navbar-tooltip group-hover:scale-100">{text}</span>
-  </div>
-);
-
-
+const cartInitialValue = () => {
+  return JSON.parse(localStorage.getItem("Timer")) || TimerDuration.FOCUS_25_MIN;
+};
 
 
   return (
