@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // const TextInput = () => {
 
@@ -16,20 +16,19 @@ import { useState } from "react";
 //     }
 //   };
 
-//   return (
-//     <textarea
-//       value={content}
-//       onChange={handleInputChange}
-//       onKeyDown={handleKeyDown}
-//       placeholder="Type your note here..."
-//     />
-//   );
-// };
-
-// export default TextInput;
-
 const TextInput = () => {
   const [content, setContent] = useState<string>('');
+
+const ref = useRef(null)
+console.log(typeof(ref), "ref")
+
+useEffect(() => {
+  const element = ref.current;
+  console.log(element);
+
+})
+
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = event.target.value;
@@ -47,31 +46,45 @@ const TextInput = () => {
   const captureHeading = (text: string): string | null => {
     const hashIndex = text.indexOf('#');
 
+console.log(typeof(hashIndex))
 
     if (hashIndex !== -1) {
       const dotIndex = text.indexOf('.', hashIndex);
-// console.log(hashIndex)
+console.log(hashIndex)
       if (dotIndex !== -1) {
         return text.substring(hashIndex + 1, dotIndex);
       }
-        // console.log(hashIndex + 1, dotIndex)
+      console.log(hashIndex + 1, dotIndex)
+      console.log(content)
     }
-
-    return null;
+return null;
   };
 
   return (
-    <>
-    <textarea
+    <div className="flex flex-col">
+    <textarea ref={ref}
       value={content}
       onChange={handleInputChange}
       placeholder="Type your note here..."
     />
-<span className="whitespace-pre-wrap ml-8">
+
+<span className="whitespace-pre-wrap mt-8 bg-slate-600">
     {content}
 </span>
-    </>
+    </div>
+
+
   );
 };
 
 export default TextInput;
+
+
+
+
+// const ToolTip = ({ children, text }: any) => (
+//   <div className="group relative">
+//     {children}
+//     <span className="navbar-tooltip group-hover:scale-100">{text}</span>
+//   </div>
+// );
