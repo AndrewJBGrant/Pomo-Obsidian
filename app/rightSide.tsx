@@ -2,15 +2,13 @@
 import { useState } from "react";
 import TimerTest from "./Timer/TestPomo";
 import Todo from "./todos/Todo";
-import { useAppcontext } from "./context/indexContext";
-import SideBarBtn from "./components/SideBarBtn";
-
+import { useSidebarcontext } from "./context/indexContext";
 
 
 
 export default function RightSide() {
 
-const { isOpen } = useAppcontext();
+const { isOpen } = useSidebarcontext();
 
 //  console.log(typeof(isOpen),"What isOpen?")
   //console.log(typeof(setIsOpen),"What isSetIsOpen?")

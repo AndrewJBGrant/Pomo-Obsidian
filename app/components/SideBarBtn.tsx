@@ -1,8 +1,8 @@
 "use client";
-import { useAppcontext } from "../context/indexContext";
+import { useSidebarcontext } from "../context/indexContext";
 
 export default function SideBarBtn() {
-const { isOpen, setIsOpen } = useAppcontext();
+const { isOpen, setIsOpen } = useSidebarcontext();
 
 
 
@@ -11,9 +11,9 @@ return(
            <button>
 {!isOpen ? (
 
-            <span className="rounded-full mr-2 absolute right-0 bg-slate-300 p-2" onClick={() => setIsOpen(!isOpen)}>O</span>
+            <span className="hover-state rounded-full mr-2 absolute right-0 p-2" onClick={() => setIsOpen(!isOpen)}>O</span>
 ) : (
-            <span className="mr-2 absolute right-0 bg-slate-300 rounded-full p-2" onClick={() => setIsOpen(!isOpen)}>C</span>
+            <span className="hover-state mr-2 absolute right-0 rounded-full p-2" onClick={() => setIsOpen(!isOpen)}>C</span>
 
 
 )}

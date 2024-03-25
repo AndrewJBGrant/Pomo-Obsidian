@@ -1,8 +1,8 @@
 "use client";
-
+import { useTimeContext, useRunningContext   } from "../context/indexContext";
 import { useState, useEffect } from "react";
 
-enum TimerDuration {
+export enum TimerDuration {
   FOCUS_25_MIN = 25 * 60,
   FOCUS_50_MIN = 50 * 60,
   BREAK_5_MIN = 1 * 60,
@@ -17,9 +17,14 @@ const TestTimer: React.FC = () => {
   const [color, setColor] = useState("bg-red-500");
 
   // state controlling time on the clock
-  const [timeLeft, setTimeLeft] = useState<number>(TimerDuration.FOCUS_25_MIN);
+//  const [timeLeft, setTimeLeft] = useState<number>(TimerDuration.FOCUS_25_MIN);
+ const { timeLeft, setTimeLeft } = useTimeContext();
+
+
   // state variable on weather timer is running or not
-  const [timerRunning, setTimerRunning] = useState<boolean>(false);
+  //const [timerRunning, setTimerRunning] = useState<boolean>(false);
+const { timerRunning, setTimerRunning} = useRunningContext()
+
 
   // set what timer is in use
   const handleTimeOption = (time: number, color: string) => {
@@ -41,7 +46,7 @@ const TestTimer: React.FC = () => {
 
     if (timerRunning && timeLeft > 0) {
       interval = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+        setTimeLeft((prevTime: number) => prevTime - 1);
       }, 1000);
     } else {
       clearInterval(interval);
@@ -56,7 +61,7 @@ const TestTimer: React.FC = () => {
   // };
 
   const pauseTimer = () => {
-    setTimerRunning((prevTimerRunning) => !prevTimerRunning);
+    setTimerRunning((prevTimerRunning: any) => !prevTimerRunning);
   };
 
   const formatTime = (time: number): string => {
@@ -84,7 +89,7 @@ const TestTimer: React.FC = () => {
      children={ <button className="text-3xl " onClick={pauseTimer}>
         {timerRunning ? "Pause" : "Start"}
       </button>} /> */}
-<button className="text-3xl " onClick={pauseTimer}>
+<button className="text-2xl " onClick={pauseTimer}>
         {timerRunning ? "Pause" : "Start"}
       </button>
 

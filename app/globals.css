@@ -57,11 +57,6 @@ opacity: 1;
 .navbar-icon {
     @apply relative flex items-center justify-center
     h-10 w-10 mx-auto
-    opacity-75
-   hover:bg-neutral-200
-   dark:hover:bg-slate-700
-
-     hover:opacity-100
      rounded-md
     transition-all duration-300 ease-linear;
   }
@@ -69,7 +64,14 @@ opacity: 1;
 .navbar-tooltip {
   @apply shadow-xl absolute w-auto p-2 m-6 min-w-max left-14
   rounded-sm bg-slate-500 text-xs font-bold transition-all duration-100 scale-0 origin-left
+}
 
+.hover-state {
+  @apply hover:bg-neutral-200
+   opacity-75
+   dark:hover:bg-slate-700
+   hover:opacity-100
 
 }
+
 }
