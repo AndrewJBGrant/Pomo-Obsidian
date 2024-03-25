@@ -3,10 +3,13 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 
 //import { IndexWrapper } from "./context/indexContext";
-
 import NavBar from "./NavBar/Navbar";
 import RightSide from "./rightSide";
 import { ThemeProviders } from "./providers/ThemeProvider";
+import SearchBar from "./components/SearchBar";
+import { AppWrapper } from "./context/indexContext";
+
+import SideBarBtn from "./components/SideBarBtn";
 
 const MainFont = Roboto({
   subsets: ["latin"],
@@ -29,15 +32,21 @@ export default function RootLayout({
       className={`${MainFont.className} antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
-        <ThemeProviders>
-          {/* <NavBar /> */}
-          <main className="min-h-screen mx-auto max-w-2xl px-5 py-12 grow">
-            {children}
-          </main>
+      <body className="relative z-0 flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
+        <AppWrapper>
+          <ThemeProviders>
+            <NavBar />
+            {/* <SearchBar type={""} /> */}
+            <main className="min-h-screen grow">
+            <div className="relative top-1/2">
+              <SideBarBtn />
+            </div>
+              {children}
+            </main>
 
-          {/* <RightSide /> */}
-        </ThemeProviders>
+            <RightSide />
+          </ThemeProviders>
+        </AppWrapper>
       </body>
     </html>
   );

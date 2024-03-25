@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import renderLinks from "../HighlightLinks";
 import { todos } from "../data";
 import TodoLi from "./TodoLi";
@@ -7,9 +8,14 @@ import TodoLi from "./TodoLi";
 export type TodoProps = {
   id: number;
   content: string;
+  completed: boolean;
 };
 
  const Todo: React.FC = () => {
+
+
+
+
   return (
     <ol className="">
    {todos.map((todo) => (

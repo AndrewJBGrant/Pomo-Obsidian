@@ -12,8 +12,8 @@ export default function Clock() {
 
    return (
       <div className="grid justify-items-center opacity-85 hover:opacity-100">
-        <span className="text-2xl font-extrabold">{date}</span>
-        <span className="text-xl">{currentDay}</span>
+        <span className="text-xl font-bold">{date}</span>
+        <span>{currentDay}</span>
       </div>
     );
   }

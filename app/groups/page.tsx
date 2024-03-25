@@ -1,10 +1,11 @@
 // import { createClient } from "../utils/supabase/server";
 
 import BackBtn from "../components/BackBtn";
+import SideBarBtn from "../components/SideBarBtn";
 
 export default async function AllGroups() {
   return (
-    <div>
+    <div className="mx-auto max-w-2xl px-5 py-12">
       <header className="mb-14 flex flex-row place-content-between">
         <span>
           <BackBtn />

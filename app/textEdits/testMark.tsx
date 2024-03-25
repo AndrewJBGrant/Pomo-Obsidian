@@ -1,38 +1,5 @@
 "use client";
-// import { useState } from "react";
 
-
-// const MarkdownTextarea: React.FC = () => {
-//   const [inputValue, setInputValue] = useState('');
-
-//   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-//     const { value } = event.target;
-//     setInputValue(convertMarkdownToHTML(value));
-//   };
-
-//   const convertMarkdownToHTML = (markdown: string): string => {
-//     // Example: Convert # Hello to <h1>Hello</h1>
-//     return markdown.replace(/# (.+)/g, '<h1>$1</h1>');
-//   };
-
-//   return (
-//     <div>
-//       <textarea
-//         value={inputValue}
-//         onChange={handleChange}
-//         placeholder="Type markdown here..."
-//         rows={10}
-//         cols={50}
-//       />
-//       <div>
-//         {/* Render the converted markdown HTML */}
-//         <div dangerouslySetInnerHTML={{ __html: inputValue }} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MarkdownTextarea;
 import React, { useState } from 'react';
 
 const MarkdownTextarea: React.FC = () => {
@@ -63,9 +30,6 @@ const lastTypedChar = markdown.substring(selectionEnd - 1, selectionEnd)
       const textBefore = markdown.substring(0, selectionStart);
       const textAfter = markdown.substring(selectionEnd);
 
-
-
-
       const headingText = textBefore.match(/# (.+)$/)?.[1] || '';
 
       const newText = textBefore.replace(/# (.+)$/, `${startTag}${headingText}${endTag}`) + textAfter;
@@ -73,6 +37,8 @@ const lastTypedChar = markdown.substring(selectionEnd - 1, selectionEnd)
 
       const newSelectionStart = textBefore.length + startTag.length;
       const newSelectionEnd = newSelectionStart + headingText.length;
+
+     // console.log(newSelectionEnd)
 
       return newText;
     }

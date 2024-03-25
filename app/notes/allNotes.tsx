@@ -21,6 +21,10 @@ export default async function AllNotes() {
   const myNotes = await getMyNotes();
   //console.log(JSON.stringify(myNotes, null, 2))
 
+
+ // const wordCount = content.split(" ").filter(Boolean).length;
+
+
   return user ? (
     <section>
       <span className="text-3xl font-extrabold">Hello {user.email}</span>
@@ -36,6 +40,8 @@ export default async function AllNotes() {
                 <span>GROUP ID{note.group_id}</span>
                 <h1>Title{note.title}</h1>
                 <h2>{note.content}</h2>
+
+                <p>Word count:{note.content.split(" ").filter(Boolean).length}</p>
               </div>
             </Link>
 

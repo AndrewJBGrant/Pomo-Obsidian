@@ -69,11 +69,11 @@ const TestTimer: React.FC = () => {
       .padStart(2, "0")}`;
   };
 
-localStorage.setItem("Timer", JSON.stringify(timeLeft));
+// localStorage.setItem("Timer", JSON.stringify(timeLeft));
 
-const cartInitialValue = () => {
-  return JSON.parse(localStorage.getItem("Timer")) || TimerDuration.FOCUS_25_MIN;
-};
+// const cartInitialValue = () => {
+//   return JSON.parse(localStorage.getItem("Timer")) || TimerDuration.FOCUS_25_MIN;
+// };
 
 
   return (
