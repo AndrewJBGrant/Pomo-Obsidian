@@ -37,7 +37,7 @@ export default function RootLayout({
           <ThemeProviders>
             <NavBar />
             {/* <SearchBar type={""} /> */}
-            <main className="min-h-screen grow">
+            <main className="min-h-screen flex-auto">
             <div className="relative top-1/2">
               <SideBarBtn />
             </div>
