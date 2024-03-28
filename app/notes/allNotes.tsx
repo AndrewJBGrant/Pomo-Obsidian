@@ -21,9 +21,7 @@ export default async function AllNotes() {
   const myNotes = await getMyNotes();
   //console.log(JSON.stringify(myNotes, null, 2))
 
-
- // const wordCount = content.split(" ").filter(Boolean).length;
-
+  // const wordCount = content.split(" ").filter(Boolean).length;
 
   return user ? (
     <section>
@@ -31,24 +29,22 @@ export default async function AllNotes() {
 
       {/* <pre>{JSON.stringify(myNotes, null, 2)}</pre> */}
 
-      <section>
+      <article>
         {myNotes?.map((note) => (
-          <div key={note.id}>
+          <div className="m-8 p-4" key={note.id}>
             <Link href={`/notes/${note.id}`}>
               <div className={`bg-${note.group_color}`}>
                 <span>{note.group_color}</span>
+
                 <span>GROUP ID{note.group_id}</span>
                 <h1>Title{note.title}</h1>
-                <h2>{note.content}</h2>
-
-                <p>Word count:{note.content.split(" ").filter(Boolean).length}</p>
               </div>
             </Link>
 
             {/* <SignOutBtn /> */}
           </div>
         ))}
-      </section>
+      </article>
     </section>
   ) : (
     <h1>Sign up or Sign in </h1>

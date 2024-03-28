@@ -6,7 +6,7 @@ import ScrollTopButton from "./ScrollTop";
 import NavIcons from "./NavIcons";
 import GroupsBtn from "../groups/GroupsBtn";
 import AuthButton from "../components/SignOutBtn";
-
+import Link from "next/link";
 //import { useColorContext } from "../context/indexContext";
 //  const contextValue = useContext(Context);
 // const { color } = useColorContext()
@@ -18,6 +18,15 @@ const NavBar = () => {
       <ThemeSwitch />
 
       <GroupsBtn />
+
+  <Link
+        href="/login"
+        className="navbar-icon"
+      >
+        IN
+      </Link>
+
+
 {/* <AuthButton /> */}
       <ScrollTopButton />
     </nav>

@@ -2,9 +2,19 @@
 
 import BackBtn from "../components/BackBtn";
 import SideBarBtn from "../components/SideBarBtn";
+import { findUser, getMyGroups } from "../supabase/supaBae";
+import Link from "next/link";
 
 export default async function AllGroups() {
-  return (
+
+const user = await findUser();
+
+const myGroups = await getMyGroups();
+
+
+
+  return user ? (
+
     <div className="mx-auto max-w-2xl px-5 py-12">
       <header className="mb-14 flex flex-row place-content-between">
         <span>
@@ -12,11 +22,21 @@ export default async function AllGroups() {
         </span>
         <span>New Group?</span>
       </header>
-      <h1>
-        Here all groups will go!
-        </h1>
+
+      <h2>Hello {user.email}</h2>
+      {myGroups?.map((group) => (
+<div key={group.id}>
+  <h1>{group.id}</h1>
+   <Link href={`/groups/${group.id}`}>Go To Group</Link>
+  <span>{group.color}</span>
+  <span>{group.title}</span>
+</div>
+      )
+      )}
     </div>
-  );
+  ) : (
+    <h1>Make SOME Groups</h1>
+  )
 }
 
 //   const supabase = createClient();

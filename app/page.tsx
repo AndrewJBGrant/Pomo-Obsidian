@@ -1,4 +1,4 @@
-"use client";
+
 
 import TextInput from "./textEdits/TextInput";
 import AllNotes from "./notes/allNotes";
@@ -8,14 +8,14 @@ import { useTimeContext } from "./context/indexContext";
 
 export default function Home() {
 
-const { timeLeft } = useTimeContext();
+
 
   return (
-    <section>
-{/* <AllNotes /> */}
+    <section className="mx-auto max-w-2xl px-5 py-12">
+<AllNotes />
 {/* <TextInput /> */}
 {/* <MarkdownTextarea /> */}
-<h1 className="mx-auto max-w-2xl px-5 py-12">{timeLeft}</h1>
+
 
     </section>
   );
