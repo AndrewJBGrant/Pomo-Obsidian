@@ -3,18 +3,10 @@ import { supabase } from "@/app/supabase/supaBae";
 
 
 
-// type note = {
-//   title: string;
-//   content: string;
-//   group_color: string;
-//   id: number;
-//   group_id: number;
-// };
-
 
 export default async function singleNote({ params }: { params: { id: number } }) {
-// const user = await findUser();
-// console.log(user)
+
+
 
 
 
@@ -30,9 +22,9 @@ export default async function singleNote({ params }: { params: { id: number } })
 //   return data
 // }
 
-const getSingleNote = async () => {
+const getSingleGroup = async () => {
   const { data, error} = await (await supabase)
-  .from("notes")
+  .from("groups")
   .select("*")
   .eq("id", `${params.id}`)
   .single()
@@ -42,14 +34,14 @@ return data;
 }
 
 
-const { title, content } = await getSingleNote()
+const { title, color } = await getSingleGroup()
 
 
 return (
 <>
 <h1>{title}</h1>
-<p>{content}</p>
-          <p>Word count:{content.split(" ").filter(Boolean).length}</p>
+<p> Color:{color}</p>
+          {/* <p>Word count:{content.split(" ").filter(Boolean).length}</p> */}
  <h4>
         Note not found <Link href={`/`}>Go Back</Link>
       </h4>

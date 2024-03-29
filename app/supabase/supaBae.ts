@@ -10,19 +10,19 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 export async function findUser() {
    const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await (await supabase).auth.getUser();
 
   return user;
 }
 
 export async function signOut() {
-  const { error } = await supabase.auth.signOut();
+  const { error } = await (await supabase).auth.signOut();
   if (error) console.error('Logout failed:', error);
 }
 
 
 export async function getMyNotes() {
-  const { data, error } = await supabase
+  const { data, error } = await (await supabase)
   .from("notes")
   .select("*")
 return data
@@ -30,7 +30,7 @@ return data
 
 
 export async function getMyGroups() {
-  const { data, error } = await supabase
+  const { data, error } = await (await supabase)
   .from("groups")
   .select("*")
 return data

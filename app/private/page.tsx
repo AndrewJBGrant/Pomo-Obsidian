@@ -8,7 +8,7 @@ import { cookies } from 'next/headers'
 export default async function PrivatePage() {
   const supabase = createClient()
 
-  const { data, error } = await supabase.auth.getUser()
+  const { data, error } = await (await supabase).auth.getUser()
   if (error || !data?.user) {
     redirect('/app/error')
   }
