@@ -1,7 +1,7 @@
 
-
+import ToolTip from "./components/ToolTip";
 import TextInput from "./textEdits/TextInput";
-import AllNotes from "./notes/allNotes";
+// import AllNotes from "./notes/allNotes";
 import MarkdownTextarea from "./textEdits/testMark";
 import { useTimeContext } from "./context/indexContext";
 
@@ -11,11 +11,11 @@ export default function Home() {
 
 
   return (
-    <section className="mx-auto max-w-2xl px-5 py-12">
-<AllNotes />
+    <section className="page-layout">
+{/* <AllNotes /> */}
 {/* <TextInput /> */}
 {/* <MarkdownTextarea /> */}
-
+<ToolTip />
 
     </section>
   );

@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { supabase } from "@/app/supabase/supaBae";
 
-
-
 // type note = {
 //   title: string;
 //   content: string;
@@ -11,49 +9,35 @@ import { supabase } from "@/app/supabase/supaBae";
 //   group_id: number;
 // };
 
+export default async function singleNote({
+  params,
+}: {
+  params: { id: number };
+}) {
+  const getSingleNote = async () => {
+    const { data, error } = await (await supabase)
+      .from("notes")
+      .select("*")
+      .eq("id", `${params.id}`)
+      .single();
 
-export default async function singleNote({ params }: { params: { id: number } }) {
-// const user = await findUser();
-// console.log(user)
+    // console.log(data)
+    return data;
+  };
 
+  const { title, content, group_id, group_color, group_name } = await getSingleNote();
 
+let wordCount = content.split(" ").filter(Boolean).length
 
-//  const { title, content, id } = await getNoteById(params.id);
+  return (
+    <article className="page-layout">
+      {/* <h1>{title}</h1> */}
+      <Link href={`/groups/${group_id}`}>{group_name}</Link>
+      <span className={`text-${group_color}`}>{group_color}</span>
+      <p>{content}</p>
+      <p>Word count:{wordCount}</p>
 
-//  async function getNoteById(id: number) {
-//   const { data, error } = await supabase
-//   .from("notes")
-//   .select("*")
-//   .eq('id', `${params.id}`)
-//   .single()
-
-//   return data
-// }
-
-const getSingleNote = async () => {
-  const { data, error} = await (await supabase)
-  .from("notes")
-  .select("*")
-  .eq("id", `${params.id}`)
-  .single()
-
-// console.log(data)
-return data;
-}
-
-
-const { title, content } = await getSingleNote()
-
-
-return (
-<>
-<h1>{title}</h1>
-<p>{content}</p>
-          <p>Word count:{content.split(" ").filter(Boolean).length}</p>
- <h4>
-        Note not found <Link href={`/`}>Go Back</Link>
-      </h4>
-</>
-)
-
+      <Link href={`/`}>Go Back</Link>
+    </article>
+  );
 }

@@ -44,15 +44,6 @@ opacity: 0.80;
 transition: all .2s ease-in-out;
 }
 
-.timer-btns:hover {
-transform: scale(1.1);
-opacity: 1;
-}
-
-.timer-btns:focus {
-opacity: 1;
-}
-
 @layer components {
 .navbar-icon {
     @apply relative flex items-center justify-center
@@ -71,7 +62,109 @@ opacity: 1;
    opacity-75
    dark:hover:bg-slate-700
    hover:opacity-100
+}
+
+.page-layout {
+@apply mx-auto max-w-2xl px-5 py-12
+}
 
 }
 
+
+/* Tooltip tests */
+.tooltip-trigger {
+  position: relative;
+  display: inline;
+}
+
+.tooltip-trigger .tooltip-test {
+   width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+
+.tooltip-trigger .tooltip-test {
+  opacity: 0;
+}
+
+.tooltip-trigger:hover .tooltip-test {
+  opacity: 1;
+}
+
+.tooltip-right{
+    top: -5px;
+    left: 105%;
+}
+
+
+.tooltip-left{
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip-top{
+    bottom:105%;
+    left:0%;
+}
+
+.tooltip-bottom{
+    top:105%;
+    left:0%;
+}
+
+.tooltip-trigger .tooltip-top::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+
+.tooltip-trigger .tooltip-bottom::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+
+.tooltip-trigger .tooltip-right::after{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+
+.tooltip-trigger .tooltip-left::after{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent  transparent transparent black;
 }

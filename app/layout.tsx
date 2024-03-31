@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className="relative z-0 flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
         <AppWrapper>
           <ThemeProviders>
-            <NavBar />
+            {/* <NavBar /> */}
             {/* <SearchBar type={""} /> */}
             <main className="min-h-screen flex-auto transition ease-in-out duration-500`">
             <div className="relative top-1/2">
@@ -44,7 +44,7 @@ export default function RootLayout({
               {children}
             </main>
 
-            <RightSide />
+            {/* <RightSide /> */}
           </ThemeProviders>
         </AppWrapper>
       </body>

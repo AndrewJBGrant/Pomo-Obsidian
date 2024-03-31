@@ -33,19 +33,48 @@ const getSingleGroup = async () => {
 return data;
 }
 
+const { title, color, id } = await getSingleGroup()
 
-const { title, color } = await getSingleGroup()
 
+const groupsNotes = async () => {
+const { data, error } = await (await supabase)
+  .from('notes')
+      .select('*')
+      .eq('group_id', id);
+
+      // console.log(data)
+      return data
+
+}
+
+const myNotes = await groupsNotes()
 
 return (
-<>
-<h1>{title}</h1>
+<section className="page-layout">
+<h1 className="bg-[color]">{title}</h1>
 <p> Color:{color}</p>
           {/* <p>Word count:{content.split(" ").filter(Boolean).length}</p> */}
  <h4>
-        Note not found <Link href={`/`}>Go Back</Link>
+         <Link href={`/`}>Go Back</Link>
       </h4>
-</>
+
+     {myNotes?.map((note) => (
+          <div className="m-8 p-4" key={note.id}>
+            <Link href={`/notes/${note.id}`}>
+              <div className={`bg-[note.group_color]`}>
+                <span>{note.group_color}</span>
+
+                <span>GROUP ID{note.group_id}</span>
+                <h1>Title{note.title}</h1>
+              </div>
+            </Link>
+
+            {/* <SignOutBtn /> */}
+          </div>
+        ))}
+
+
+</section>
 )
 
 }
