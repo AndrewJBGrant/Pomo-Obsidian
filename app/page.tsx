@@ -12,10 +12,12 @@ export default function Home() {
 
   return (
     <section className="page-layout">
+
+      <h1>Hello Jest is running!</h1>
 {/* <AllNotes /> */}
 {/* <TextInput /> */}
 {/* <MarkdownTextarea /> */}
-<ToolTip />
+{/* <ToolTip /> */}
 
     </section>
   );

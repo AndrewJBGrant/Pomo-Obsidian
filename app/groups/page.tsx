@@ -35,7 +35,7 @@ const myGroups = await getMyGroups();
       )}
     </div>
   ) : (
-    <h1>Make SOME Groups</h1>
+    <h4>Make SOME Groups</h4>
   )
 }
 

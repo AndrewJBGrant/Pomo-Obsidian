@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <section
+    class="page-layout"
+  >
+    <h1>
+      Hello Jest is running!
+    </h1>
+  </section>
+</div>
+`;

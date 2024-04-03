@@ -20,6 +20,8 @@ export default async function PrivatePage() {
     <div key={cookie.name}>
       <p>Name: {cookie.name}</p>
       <p>Value: {cookie.value}</p>
+
+      <h1>Hello {data.user.email}</h1>
     </div>
   ))
 
