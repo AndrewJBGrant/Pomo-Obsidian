@@ -2,7 +2,7 @@
   "name": "focus-app",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.7",
-    "next": "14.1.0",
+    "next": "^14.1.4",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",

@@ -87,17 +87,17 @@ setSearchQuery("")
 
   return (
 
-<search className="mx-auto max-w-2xl">
-    <div className="text-1xl w-1/2 flex rounded-md fixed text-gray-900 dark:placeholder-gray-400 dark:text-white dark:bg-slate-900">
+<search className="mx-auto max-w-3xl px-5 py-8">
+    <div className="text-1xl w-1/2 flex rounded-md fixed text-gray-900 dark:placeholder-gray-400 dark:text-white dark:bg-slate-900 border">
 <span className="place-self-center m-2">
-{searchQuery.length === 0 ? <button className="text-2xl"><FaMagnifyingGlass/></button> :
+{searchQuery.length === 0 ? <button className="text-xl"><FaMagnifyingGlass/></button> :
 <button className="text-2xl" onClick={clearField}><MdOutlineClear/></button>
 }
 </span>
     <input
     value={searchQuery}
     onChange={handleInputChange}
-      className="w-full p-3 place-self-center focus:outline-none"
+      className="w-full p-3 text-xl place-self-center focus:outline-none caret-yellow-300"
       placeholder={placeHolderText}
 
     />

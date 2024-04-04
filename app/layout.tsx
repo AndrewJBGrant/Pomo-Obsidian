@@ -7,9 +7,9 @@ import NavBar from "./NavBar/Navbar";
 import RightSide from "./rightSide";
 import { ThemeProviders } from "./providers/ThemeProvider";
 import SearchBar from "./components/SearchBar";
-import { AppWrapper } from "./context/indexContext";
+// import { AppWrapper } from "./context/indexContext";
 
-import SideBarBtn from "./components/SideBarBtn";
+// import SideBarBtn from "./components/SideBarBtn";
 
 const MainFont = Roboto({
   subsets: ["latin"],
@@ -33,20 +33,20 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="relative z-0 flex bg-neutral-50 dark:bg-[#282c35] rounded-md">
-        <AppWrapper>
+        {/* <AppWrapper> */}
           <ThemeProviders>
-            {/* <NavBar /> */}
-            {/* <SearchBar type={""} /> */}
+            <NavBar />
             <main className="min-h-screen flex-auto transition ease-in-out duration-500`">
+            <SearchBar type={""} />
             <div className="relative top-1/2">
-              <SideBarBtn />
+              {/* <SideBarBtn /> */}
             </div>
               {children}
             </main>
 
             {/* <RightSide /> */}
           </ThemeProviders>
-        </AppWrapper>
+        {/* </AppWrapper> */}
       </body>
     </html>
   );

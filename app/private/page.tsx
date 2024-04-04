@@ -17,7 +17,7 @@ export default async function PrivatePage() {
 
       const cookieStore = cookies()
   return cookieStore.getAll().map((cookie) => (
-    <div key={cookie.name}>
+    <div key={cookie.name} className="page-layout">
       <p>Name: {cookie.name}</p>
       <p>Value: {cookie.value}</p>
 

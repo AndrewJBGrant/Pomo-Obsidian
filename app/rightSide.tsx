@@ -3,7 +3,7 @@ import { useState } from "react";
 import TimerTest from "./Timer/TestPomo";
 import Todo from "./todos/Todo";
 import { useSidebarcontext } from "./context/indexContext";
-import SideBarBtn from "./components/SideBarBtn";
+import SideBarBtn from "./components/buttons/SideBarBtn";
 
 export default function RightSide() {
   const { isOpen } = useSidebarcontext();
@@ -22,11 +22,9 @@ export default function RightSide() {
           <></>
         ) : (
           <div className={`relative border-l-2 h-full`}>
-               <TimerTest />
+            <TimerTest />
 
-
-              <div className="overflow-y-auto h-96">{/* <Todo /> */}</div>
-
+            <div className="overflow-y-auto h-96">{/* <Todo /> */}</div>
           </div>
         )}
       </section>

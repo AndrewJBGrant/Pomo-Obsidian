@@ -1,8 +1,8 @@
 // import Link from "next/link";
 // import { headers } from "next/headers";
 // import { createClient } from "../supabase/server";
-// import { redirect } from "next/navigation";
-// import { SubmitButton } from "./submitButton";
+import { redirect } from "next/navigation";
+ import { SubmitButton } from "../components/buttons/SubmitButton";
 
 // export default function Login({
 //   searchParams,
@@ -101,13 +101,53 @@ import { login, signup } from './actions'
 
 export default function LoginPage() {
   return (
-    <form className="mx-auto max-w-2xl px-5 py-12">
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
-    </form>
+     <form className="animate-in flex-1 flex flex-col  mx-auto max-w-3xl px-5 py-12 gap-2 text-foreground p-8">
+       <label className="text-md" htmlFor="email">
+           Email
+         </label>
+         <input
+           className="rounded-md px-4 py-2 bg-inherit border mb-6"
+           name="email"
+           placeholder="you@example.com"
+           required
+         />
+         <label className="text-md" htmlFor="password">
+           Password
+         </label>
+         <input
+           className="rounded-md px-4 py-2 bg-inherit border mb-6"
+           type="password"
+           name="password"
+           placeholder="••••••••"
+           required
+        />
+         <SubmitButton
+          formAction={login}
+          className="rounded-md px-4 py-2 text-foreground mb-2"
+          pendingText="Signing In..."
+        >
+          Sign In
+        </SubmitButton>
+        <SubmitButton
+          formAction={signup}
+          className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
+          pendingText="Signing Up..."
+        >
+          Sign Up
+        </SubmitButton>
+        {/* {searchParams?.message && (
+          <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+            {searchParams.message}
+          </p>
+        )} */}
+      </form>
   )
+    // <form className="mx-auto max-w-2xl px-5 py-12">
+    //   <label htmlFor="email">Email:</label>
+    //   <input id="email" name="email" type="email" required />
+    //   <label htmlFor="password">Password:</label>
+    //   <input id="password" name="password" type="password" required />
+    //   <button formAction={login}>Log in</button>
+    //   <button formAction={signup}>Sign up</button>
+    // </form>
 }

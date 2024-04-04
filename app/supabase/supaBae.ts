@@ -21,12 +21,25 @@ export async function signOut() {
 }
 
 
+
+
+// Get all a users notes for display on allNotes.tsx
 export async function getMyNotes() {
-  const { data, error } = await (await supabase)
+  try {
+  let { data: notes, error } = await (await supabase)
   .from("notes")
   .select("*")
-return data
+
+if (notes) {
+  // console.log(notes)
 }
+  } catch (error) {
+// console.log(error)
+  }
+}
+
+getMyNotes();
+
 
 
 export async function getMyGroups() {
@@ -36,16 +49,46 @@ export async function getMyGroups() {
 return data
 }
 
-// export async function getNoteById(id: number) {
-//   const { data, error } = await supabase
-//   .from("notes")
-//   .select("*")
-//   .eq('id', `${params.id}`)
-//   .single()
 
-//   return data
-// }
+// Creating a note lets see!
+export async function createNote(title: string) {
+try {
 
+const { data, error } = await (await supabase)
+.from("notes")
+.insert({
+title
+})
+if (data) {
+console.log(data, "Note created")
+}
+
+} catch(error) {
+console.log(error, "something went wrong")
+}
+createNote(title)
+}
+
+
+
+
+
+
+
+
+export interface NoteId {
+  id: number
+}
+
+export async function getNoteById(params: NoteId) {
+  const { data, error } = await (await supabase)
+  .from("notes")
+  .select("*")
+  .eq('id', `${params.id}`)
+  .single()
+
+  return data
+}
 
 
 // https://supabase.com/docs/guides/database/joins-and-nesting

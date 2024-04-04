@@ -4,13 +4,13 @@ import { supabase } from "@/app/supabase/supaBae";
 
 
 
-export default async function singleNote({ params }: { params: { id: number } }) {
+export default async function singleGroup({ params }: { params: { id: number } }) {
 
 
 
 
 
-//  const { title, content, id } = await getNoteById(params.id);
+// const { title, content, id } = await getNoteById(NoteId);
 
 //  async function getNoteById(id: number) {
 //   const { data, error } = await supabase
